@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+import os
 
 from pathlib import Path
 
@@ -25,7 +26,8 @@ SECRET_KEY = 'django-insecure-@b061v=4=0us57nip)7gv#+4%uen2h=_*a^)x!rit@zbgqnq)l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-cesargarcia-ecomercethu-h0clgdzew2r.ws-eu108.gitpod.io',]
+ALLOWED_HOSTS = ['8000-cesargarcia-ecomercethu-h0clgdzew2r.ws-eu108.gitpod.io',
+                '8000-cesargarcia-ecomercethu-h0clgdzew2r.ws-eu108.gitpod.io']
 
 
 # Application definition
@@ -37,6 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
 ]
 
 MIDDLEWARE = [
@@ -47,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware', # required by allauth
 ]
 
 ROOT_URLCONF = 'ecomerce_thunder.urls'
@@ -60,12 +68,39 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
+                'django.contrib.auth.context_processors.auth', # required by allauth
                 'django.contrib.messages.context_processors.messages',
             ],
         },
     },
 ]
+
+# Django-Allauth backends needed settings
+CSRF_TRUSTED_ORIGINS = ['https://8000-cesargarcia-ecomercethu-h0clgdzew2r.ws-eu108.gitpod.io'] # Required by Django 4 update https://docs.djangoproject.com/en/dev/releases/4.0/#format-change
+
+AUTHENTICATION_BACKENDS = [
+    
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by email
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+SITE_ID = 1
+
+# Email confirmation settings
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
+ACCOUNT_USERNAME_MIN_LENGTH = 4
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
+
 
 WSGI_APPLICATION = 'ecomerce_thunder.wsgi.application'
 
