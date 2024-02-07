@@ -89,7 +89,7 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
-# Email confirmation settings
+# Allauth email confirmation settings
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
