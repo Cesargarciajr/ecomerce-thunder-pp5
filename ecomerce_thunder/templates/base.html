@@ -47,10 +47,11 @@
 
 <body>
     <header class="container-fluid fixed-top">
-        <div id=topnav class="row pt-lg-2 d-none d-lg-flex align-item-center justify-content-center">
+        <div id=topnav
+            class="row pt-lg-2 d-none d-lg-flex align-item-center justify-content-center bg-black bg-gradient bg-opacity-50">
             <!--Logo-->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                <a href="{% url 'home' %}" class="nav-link main-logo-link">
+                <a href="{% url 'home' %}" id="thunder-logo" class="nav-link main-logo-link">
                     <h2 class="logo-font my-0"><strong>Thunder</strong> Nutrition <i
                             class="fa-solid fa-bolt"></i></h2>
                 </a>
@@ -60,15 +61,17 @@
                 <form method="GET" action="">
                     <div class="form-group has-search">
                         <span class="fa fa-search form-control-feedback"></span>
-                        <input type="text" class="form-control" placeholder="Search">
-                        </div>
+                        <input type="text" id="search-input" class="form-control" placeholder="Search">
+                    </div>
                 </form>
             </div>
             <!--Account and Shopping Bag-->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <ul class="list-inline list-unstyled text-center text-lg-right my-0 pt-3 d-flex justify-content-end">
+                <ul
+                    class="list-inline list-unstyled text-center text-lg-right my-0 pt-4 px-3 d-flex justify-content-end">
                     <li class="list-inline-item dropdown">
-                        <a class="text-white nav-link dropdown-toggle" href="#" id="user-options" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="text-white nav-link dropdown-toggle" href="#" id="user-options" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fa-solid fa-user" style="color: #ffffff;"></i></div>
                                 <p class="my-0 text-white">My Account</p>
@@ -87,10 +90,10 @@
                             {% endif %}
                         </div>
                     </li>
-                    <!--Bag Icon-->
-                    <li class="list-inline-item">
+                    <!--Shopping Cart Icon-->
+                    <li class="list-inline-item mx-4">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link"
-                            href="">
+                            href="" id="shop-cart">
                             <div class="text-center">
                                 <div><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></div>
                                 <p class="my-0">
@@ -105,6 +108,16 @@
                     </li>
                 </ul>
             </div>
+        </div>
+        <div class="row bg-black bg-gradient bg-opacity-50">
+            <nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-light w-100">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
+                    aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                {% include 'includes/mobile-top-header.html' %}
+                {% include 'includes/main-nav.html' %}
+            </nav>
         </div>
     </header>
 

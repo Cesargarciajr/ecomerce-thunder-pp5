@@ -26,6 +26,7 @@ body {
     pointer-events: none;
     color: #aaa;
 }
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -55,14 +56,60 @@ body {
     border: 1px solid black !important;
 }
 
+.nav-item:hover,
+#specials-link:hover,
+#user-options:hover,
+#shop-cart:hover,
+#preworkout-link:hover,
+#protein-link:hover,
+#all-products-link:hover {
+    color: #f16034;
+    border-bottom: 1px solid #f16034;
+}
+
+#thunder-logo {
+    color: white;
+}
+#thunder-logo:hover{
+    color: #f16034;
+}
+
+#search-input:hover {
+    border: 2px solid #f16034;
+}
+
+#search-input:hover::placeholder,
+#search-input:focus::placeholder,
+#search-input:active::placeholder {
+    color: #f16034;
+}
+
+#shop-now-button {
+    color: white;
+    background-color: #f16034;
+    border: 1px solid white;
+    
+}
+
+#shop-now-button:hover {
+    color: black;
+    font-weight: bold;
+    border: 4px solid black;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
+    body {
+        background: url('../media/hero-image-lg.png') no-repeat center fixed;
+        background-size: cover;
+    }
   .container {
     max-width: 80%;
   }
 }
+
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
