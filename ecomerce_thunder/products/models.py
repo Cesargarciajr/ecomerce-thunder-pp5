@@ -3,6 +3,10 @@ from django.db import models
 # Create your models here.
 
 class Category(models.Model):
+    
+    class Meta:
+        verbose_name_plural = 'Categories' # Fixing how 'Categories' will be displayed on Django Admin
+
     name = models.CharField(max_length=254)
     display_name = models.CharField(max_length=254, null=True, blank=True)
 
