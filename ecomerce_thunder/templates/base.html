@@ -48,7 +48,7 @@
 <body>
     <header class="container-fluid fixed-top">
         <div id=topnav
-            class="row pt-lg-2 d-none d-lg-flex align-item-center justify-content-center bg-black bg-gradient bg-opacity-50">
+            class="row pt-lg-2 d-none d-lg-flex align-item-center justify-content-center bg-dark bg-gradient">
             <!--Logo-->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" id="thunder-logo" class="nav-link main-logo-link">
@@ -98,9 +98,9 @@
                                 <div><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></div>
                                 <p class="my-0">
                                     {% if grand_total %}
-                                    €{{ grand_total|floatformat:2 }}
+                                    {{ grand_total|floatformat:2 }}€
                                     {% else %}
-                                    €0.00
+                                    0.00€
                                     {% endif %}
                                 </p>
                             </div>
@@ -121,6 +121,8 @@
         </div>
     </header>
 
+    {% block footer%}
+    {% endblock %}
     <!-- Container to display validation messages to user -->
     {% if messages %}
     <div class="message-container">
