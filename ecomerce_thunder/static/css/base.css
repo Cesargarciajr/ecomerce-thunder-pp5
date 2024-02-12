@@ -77,6 +77,16 @@ body {
     border-bottom: 1px solid #f16034;
 }
 
+#product-card:hover {
+    box-shadow: 0px 0px 20px rgba(241, 96, 52,.3);
+    overflow: hidden;
+}
+
+#product-card:hover img{
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
 #thunder-logo {
     color: white;
 }
@@ -102,9 +112,22 @@ body {
 }
 
 #shop-now-button:hover {
-    color: black;
     font-weight: bold;
-    border: 4px solid black;
+    color: #f16034;
+    background-color: white;
+    border: 1px solid #f16034;
+}
+
+#categories-badge {
+    border: 1px solid #f16034;
+    color: #f16034;
+}
+
+#categories-badge:hover {
+    border: 1px solid #f16034;
+    background-color: #f16034;
+    color: white;
+
 }
 
 /* -------------------------------- Media Queries */

@@ -14,19 +14,48 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="logo-font">All Products</h2>
+                <h2 class="logo-font">Products</h2>
+                {% for current in current_categories %}
+                    <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ current.name }}">
+                        <span id="categories-badge" class="p-2 mt-2 badge rounded-3">{{ current.display_name }}</span>
+                    </a>
+                {% endfor %}
                 <hr class="w-50 mx-auto">
             </div>
         </div>
         <div class="row">
+            <!-- Sorting filtering -->
             <div class="product-container col-10 offset-1">
                 <div class="row mt-1 mb-2">
+                    <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                        <div class="sort-select-wrapper w-50">
+                            <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                                <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+                                <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Product counter and go back link-->
+                    <div class="col-12 col-md-6 order-md-first">
+                        <p class="text-muted mt-3 text-center text-md-left">
+                            {% if search_term or current_categories or current_sorting != 'None_None' %}
+                                <span class="small"><a href="{% url 'products' %}">Back to All Products</a> | </span>
+                            {% endif %}
+                            {{ products|length }} Products found{% if search_term %} for <strong>"{{ search_term }}"</strong>{% endif %}
+                        </p>
+                    </div>
+                </div>
                 <div class="row">
                     {% for product in products %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card h-100 border-0">
+                            <div class="card h-100 border-0" id="product-card">
                                 <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ product.image_url }}" alt="{{ product.name }}">
+                                    <img class="card-img-top img-fluid p-3" id="product-img" src="{{ product.image_url }}" alt="{{ product.name }}">
                                 </a>
                                 <div class="card-body pb-0">
                                     <p class="mb-0">{{ product.name }}</p>
@@ -35,6 +64,13 @@
                                     <div class="row">
                                         <div class="col">
                                             <p class="lead mb-0 text-left font-weight-bold">{{ product.price }}€</p>
+                                            {% if product.category %}
+                                            <p class="small mt-1 mb-0">
+                                                <a class="text-muted link-underline link-underline-opacity-0" href="{% url 'products' %}?category={{ product.category.name }}">
+                                                    <i class="fa-solid fa-list"></i> {{  product.category.display_name }}
+                                                </a>
+                                            </p>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>
