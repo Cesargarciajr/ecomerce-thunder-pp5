@@ -17,10 +17,10 @@
                 Protein
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Whey Protein</a>
-                <a href="" class="dropdown-item">Whey Isolate</a>
-                <a href="" class="dropdown-item">Vegan / Plant Protein</a>
-                <a href="" class="dropdown-item">All Protein</a>
+                <a href="{% url 'products' %}?category=whey-protein" class="dropdown-item">Whey Protein</a>
+                <a href="{% url 'products' %}?category=whey-isolate" class="dropdown-item">Whey Isolate</a>
+                <a href="{% url 'products' %}?category=vegan-protein" class="dropdown-item">Vegan / Plant Protein</a>
+                <a href="{% url 'products' %}?category=whey-protein,whey-isolate,vegan-protein" class="dropdown-item">All Protein</a>
             </div>
         </li>
 
@@ -29,9 +29,9 @@
                 Pre-Workout
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="" class="dropdown-item">Powder Pre-workout</a>
-                <a href="" class="dropdown-item">Energy Drinks</a>
-                <a href="" class="dropdown-item">All Pre-Workouts</a>
+                <a href="{% url 'products' %}?category=powder-pre-workout" class="dropdown-item">Powder Pre-workout</a>
+                <a href="{% url 'products' %}?category=energy-drinks" class="dropdown-item">Energy Drinks</a>
+                <a href="{% url 'products' %}?category=powder-pre-workout,energy-drinks" class="dropdown-item">All Pre-Workouts</a>
             </div>
         </li>
 
@@ -40,9 +40,9 @@
                 Special Offers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="" class="dropdown-item">Deals</a>
-                <a href="" class="dropdown-item">Clearance</a>
-                <a href="" class="dropdown-item">All Specials</a>
+                <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
+                <a href="{% url 'products' %}?category=clearance" class="dropdown-item">Clearance</a>
+                <a href="{% url 'products' %}?category=deals,clearance" class="dropdown-item">All Specials</a>
             </div>
         </li>
     </ul>
