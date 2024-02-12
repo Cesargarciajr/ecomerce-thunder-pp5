@@ -14,10 +14,10 @@
         </div>
     </a>
     <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
-        <form method="GET" action="">
+        <form method="GET" action="{% url 'products' %}">
             <div class="form-group has-search">
                 <span class="fa fa-search form-control-feedback"></span>
-                <input type="text" id="search-input" class="form-control" placeholder="Search">
+                <input type="text" id="search-input" class="form-control" placeholder="Search" name="search">
             </div>
         </form>
     </div>
