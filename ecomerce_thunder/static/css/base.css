@@ -77,6 +77,35 @@ body {
     border-bottom: 1px solid #f16034;
 }
 
+/* back to the top button hover effect*/
+#btt-button {
+    height: 41px;
+    width: 41px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+    background-color: #f16034;
+    border: 2px solid white;
+}
+
+#btt-button:hover {
+    background-color: white;
+    border: 2px solid #f16034;
+    cursor: pointer;
+    box-shadow: 0px 0px 20px rgba(241, 96, 52,.3);
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+#btt-link {
+    color: white;
+}
+
+#btt-link:hover {
+    color: #f16034;
+}
+
 #product-card:hover {
     box-shadow: 0px 0px 20px rgba(241, 96, 52,.3);
     overflow: hidden;
