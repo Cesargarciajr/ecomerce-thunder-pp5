@@ -43,7 +43,7 @@
     </div>
 </li>
 <li class="list-inline-item p-2">
-    <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-white{% endif %} nav-link d-block d-lg-none" href="">
+    <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-white{% endif %} nav-link d-block d-lg-none" href="{% url 'view_shopping_cart' %}">
         <div class="text-center">
             <div><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></div>
             <p class="my-0">

@@ -95,7 +95,7 @@
                     <!--Shopping Cart Icon-->
                     <li class="list-inline-item mx-4">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link"
-                            href="" id="shop-cart">
+                            href="{% url 'view_shopping_cart' %}" id="shop-cart">
                             <div class="text-center">
                                 <div><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></div>
                                 <p class="my-0">
