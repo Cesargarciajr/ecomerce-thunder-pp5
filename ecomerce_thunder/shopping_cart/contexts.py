@@ -1,5 +1,5 @@
 from decimal import Decimal
-from djnago.con import settings
+from django.conf import settings
 
 
 # Context processor to make this dictionary available through the entire application which added in the settings.py context processor array
@@ -25,7 +25,7 @@ def shopping_cart_contents(request):
         'total': total,
         'product_count': product_count,
         'get_free_delivery': get_free_delivery,
-        'free_delivery': settings.FREE_DELIVERY
+        'free_delivery': settings.FREE_DELIVERY,
         'grand_total': grand_total,
     }
 

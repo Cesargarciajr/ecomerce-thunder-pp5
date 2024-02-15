@@ -66,6 +66,20 @@ body {
 	z-index: -1;
 }
 
+.btn-shopping-cart {
+    background-color: #f16034 !important;
+    color: white !important; /* use to override link colors for <a> elements */
+    border: 1px solid white !important;
+}
+
+.btn-shopping-cart:hover,
+.btn-shopping-cart:active,
+.btn-shopping-cart:focus {
+    background-color: white !important;
+    color: #f16034 !important; /* use to override link colors for <a> elements */
+    border: 1px solid #f16034 !important;
+}
+
 .nav-item:hover,
 #specials-link:hover,
 #user-options:hover,
