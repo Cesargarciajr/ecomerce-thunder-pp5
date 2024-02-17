@@ -24,20 +24,21 @@ def shopping_cart_contents(request):
         })
 
     if total < settings.FREE_DELIVERY:
-        delivery = total * Decimal(settings.STANDARD_DELIVERY)
-        get_free_delivery = settings.FREE_DELIVERY - total
+        delivery = total * Decimal(settings.STANDARD_DELIVERY / 100)
+        free_delivery_delta = settings.FREE_DELIVERY - total
     else:
         delivery = 0
-        get_free_delivery = 0
-
+        free_delivery_delta = 0
+    
     grand_total = delivery + total
-
+    
     context = {
         'shopping_cart_items': shopping_cart_items,
         'total': total,
         'product_count': product_count,
-        'get_free_delivery': get_free_delivery,
-        'free_delivery': settings.FREE_DELIVERY,
+        'delivery': delivery,
+        'free_delivery_delta': free_delivery_delta,
+        'free_delivery_threshold': settings.FREE_DELIVERY,
         'grand_total': grand_total,
     }
 

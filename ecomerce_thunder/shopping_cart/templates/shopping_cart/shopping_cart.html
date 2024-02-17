@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 
+<!-- loading custom templatetag -->
+{% load shopping_cart_tools %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -48,7 +51,7 @@
                                         <p class="my-0">{{ item.product.price }}€</p>
                                     </td>
                                     <td class="py-3 w-25">
-                                        <form class="form update-form" method="POST" action="">
+                                        <form class="form update-form" method="POST" action="{% url 'adjust_shopping_cart' item.item_id %}">
                                             {% csrf_token %}
                                             <div class="form-group">
                                                 <div class="input-group">
@@ -76,11 +79,11 @@
                                             </div>
                                         </form>
                                         <a class="update-link text-info"><small>Update</small></a>
-                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-size="{{ item.size }}"><small>Remove</small></a>
+                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                                     </td>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">${{ item.product.price }}</p>
+                                        <p class="my-0">{{ item.product.price | calc_subtotal:item.quantity}}€</p>
                                     </td>
 
                                 </tr>
@@ -90,9 +93,9 @@
                                     <h6><strong>Total: {{ total|floatformat:2 }}€</strong></h6>
                                     <h6>Delivery: {{ delivery|floatformat:2 }}€</h6>
                                     <h4 class="mt-4"><strong>Grand Total: {{ grand_total|floatformat:2 }}€</strong></h4>
-                                    {% if free_delivery > 0 %}
+                                    {% if free_delivery_delta > 0 %}
                                         <p class="mb-1 text-danger">
-                                            You could get free delivery by spending just <strong>{{ free_delivery }}€</strong> more!
+                                            You could get free delivery by spending just <strong>{{ free_delivery_delta }}€</strong> more!
                                         </p>
                                     {% endif %}
                                 </td>
@@ -133,7 +136,6 @@
 {{ block.super }}
 {% include 'products/includes/quantity_script.html' %}
 
-
 <script type="text/javascript">
     // Update quantity on click
     $('.update-link').click(function(e) {
@@ -145,8 +147,9 @@
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var url = `shopping_cart/remove/${itemId}`;
-        var data = {'csrmiddlewaretoken': csrfToken};
+        var size = $(this).data('product_size');
+        var url = `/shopping_cart/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
 
         $.post(url, data)
          .done(function() {
