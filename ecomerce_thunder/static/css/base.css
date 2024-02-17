@@ -103,6 +103,11 @@ body {
    border: 1px solid #f16034 !important;
 }
 
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 /* back to the top button hover effect*/
 #btt-button {
     height: 41px;
