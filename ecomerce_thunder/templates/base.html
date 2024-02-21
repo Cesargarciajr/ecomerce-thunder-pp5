@@ -1,6 +1,6 @@
 {% load static %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -95,7 +95,7 @@
                     </li>
                     <!--Shopping Cart Icon-->
                     <li class="list-inline-item mx-4">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link"
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link link-unstyled"
                             href="{% url 'view_shopping_cart' %}" id="shop-cart">
                             <div class="text-center">
                                 <div><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></div>

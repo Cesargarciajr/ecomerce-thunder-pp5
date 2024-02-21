@@ -121,6 +121,18 @@ body {
     overflow: visible;
 }
 
+.btn-color-base {
+    background-color: #f16034 !important;
+    color: white !important;
+}
+
+.btn-color-base:hover,
+.btn-color-base:active,
+.btn-color-base:focus {
+    background-color: white !important;
+    color: #f16034 !important;
+    border: 1px solid #f16034 !important;
+}
 
 /* back to the top button hover effect*/
 #btt-button {
@@ -132,6 +144,10 @@ body {
     color: white;
     background-color: #f16034;
     border: 2px solid white;
+}
+
+#toast-checkout {
+    width: 100%;
 }
 
 #btt-button:hover {
