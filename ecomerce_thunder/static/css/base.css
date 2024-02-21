@@ -108,6 +108,20 @@ body {
     cursor: pointer;
 }
 
+/* ------------------------------- Toasts message container */
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+
 /* back to the top button hover effect*/
 #btt-button {
     height: 41px;
