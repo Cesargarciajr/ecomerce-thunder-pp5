@@ -62,12 +62,10 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware', # required by allauth
 ]
 
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
 ROOT_URLCONF = 'ecomerce_thunder.urls'
-
-# Crispy forms template linked to Bootstrap 5
-CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
-
-CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 TEMPLATES = [
     {
@@ -83,13 +81,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth', # required by allauth
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.media',
                 'shopping_cart.contexts.shopping_cart_contents', # content processor for shopping cart content
             ],
-            'builtins': [
-                'crispy_forms.templatetags.crispy_forms_tags',
-                'crispy_forms.templatetags.crispy_forms_field',
-            ]
         },
     },
 ]
