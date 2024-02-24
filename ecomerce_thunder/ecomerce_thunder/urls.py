@@ -24,4 +24,5 @@ urlpatterns = [
     path('products/', include('products.urls')), # including all urls from products app that renders its templates
     path('shopping_cart/', include('shopping_cart.urls')), # including all urls from shopping_cart app that renders its templates
     path('checkout/', include('checkout.urls')), # including all urls from checkout app that renders its templates
+    path('profiles/', include('profiles.urls'),) # including all urls from profiles app that renders its templates
 ]
