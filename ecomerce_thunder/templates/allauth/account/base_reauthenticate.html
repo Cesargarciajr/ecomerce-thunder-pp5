@@ -4,10 +4,10 @@
 {% block head_title %}
     {% trans "Confirm Access" %}
 {% endblock head_title %}
-{% block content %}
-    {% element h1 %}
-        {% trans "Confirm Access" %}
-    {% endelement %}
+{% block inner_content %}
+<hr>
+        <h2 class="logo-font mb-4">{% trans "Confirm Access" %}</h2>
+<hr>
     <p>{% blocktranslate %}Please reauthenticate to safeguard your account.{% endblocktranslate %}</p>
     {% block reauthenticate_content %}{% endblock %}
     {% if reauthentication_alternatives %}
@@ -24,4 +24,4 @@
             {% endfor %}
         </ul>
     {% endif %}
-{% endblock content %}
+{% endblock inner_content %}

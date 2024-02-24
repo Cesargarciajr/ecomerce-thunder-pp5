@@ -3,10 +3,10 @@
 {% block head_title %}
     {% trans "Email Addresses" %}
 {% endblock head_title %}
-{% block content %}
-    {% element h1 %}
-        {% trans "Email Addresses" %}
-    {% endelement %}
+{% block inner_content %}
+<hr>
+        <h2 class="logo-font mb-4">{% trans "Email Addresses" %}</h2>
+<hr>
     {% if emailaddresses %}
         <p>{% trans 'The following email addresses are associated with your account:' %}</p>
         {% url 'account_email' as email_url %}
@@ -72,7 +72,7 @@
             {% endslot %}
         {% endelement %}
     {% endif %}
-{% endblock content %}
+{% endblock inner_content %}
 {% block extra_body %}
     <script type="text/javascript">
 (function() {

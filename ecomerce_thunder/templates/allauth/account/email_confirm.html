@@ -5,10 +5,12 @@
 {% block head_title %}
     {% trans "Confirm Email Address" %}
 {% endblock head_title %}
-{% block content %}
+{% block inner_content %}
+<hr>
     {% element h1 %}
-        {% trans "Confirm Email Address" %}
+        <h2 class="logo-font mb-4">{% trans "Confirm Email Address" %}</h2>
     {% endelement %}
+<hr>
     {% if confirmation %}
         {% user_display confirmation.email_address.user as user_display %}
         {% if can_confirm %}
@@ -35,4 +37,4 @@
             {% blocktrans %}This email confirmation link expired or is invalid. Please <a href="{{ email_url }}">issue a new email confirmation request</a>.{% endblocktrans %}
         </p>
     {% endif %}
-{% endblock content %}
+{% endblock inner_content %}

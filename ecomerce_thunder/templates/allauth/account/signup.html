@@ -3,10 +3,10 @@
 {% block head_title %}
     {% trans "Signup" %}
 {% endblock head_title %}
-{% block content %}
-    {% element h1 %}
-        {% trans "Sign Up" %}
-    {% endelement %}
+{% block inner_content %}
+<hr>
+    <h2 class="logo-font mb-4">{% trans "Sign Up" %}</h2>    
+<hr>    
     <p>
         {% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
     </p>
@@ -31,4 +31,4 @@
     {% if SOCIALACCOUNT_ENABLED %}
         {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
     {% endif %}
-{% endblock content %}
+{% endblock inner_content %}
