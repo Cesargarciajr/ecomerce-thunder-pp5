@@ -1,0 +1,1 @@
+web: gunicorn ecomerce_thunder.wsgi:application
