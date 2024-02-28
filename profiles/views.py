@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from shopping_cart.views import add_to_shopping_cart
 
 from .models import UserProfile
 from .forms import UserProfileForm
