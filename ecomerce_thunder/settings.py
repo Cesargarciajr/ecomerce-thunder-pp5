@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-cesargarcia-ecomercethu-h0clgdzew2r.ws-eu108.gitpod.io',
                 '8000-cesargarcia-ecomercethu-h0clgdzew2r.ws-eu108.gitpod.io',
-                'https://thunder-nutrition-6bac86cc4153.herokuapp.com/']
+                'thunder-nutrition-6bac86cc4153.herokuapp.com']
 
 
 # Application definition
