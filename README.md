@@ -2,11 +2,11 @@
 
 <h1 align="center"><a href="https://galetos-orderapp-pp4-1411404b0904.herokuapp.com/" target="_blank">Thunder Nutrition</a></h1> 
 
-Thunder Nutrition is an ecomerce website that sells gym related supplements and equipments. This project was developed with Python and Django for the purpose of learning and putting to practise everything I learned about Full Stack Web Development
+Introducing Thunder Nutrition an e-commerce platform is the culmination of my journey in Full Stack Web Development, developed using Python and Django. With Thunder Nutrition, I've combined my passion for fitness with cutting-edge technology to provide customers with a seamless shopping experience. From top-tier supplements to premium equipment, every product is meticulously curated to meet the needs of athletes and fitness enthusiasts.
 
 [**Link to Thunder Nutrition App Live **](https://thunder-nutrition-6bac86cc4153.herokuapp.com/)
 
-![Alt text](static/media/images/hero-image.png "Hero image for Readme File")
+![Alt text](static/media/hero_readme.png "Hero image for Readme File")
 
 # Contents
 
