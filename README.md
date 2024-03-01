@@ -49,7 +49,7 @@ ___
 
   ### User Stories
 
-    User stories were written and recorded using the Kanban tool from GitHub that can be found in [**here**](https://github.com/Cesargarciajr/ecomerce-thunder-pp5/issues)
+User stories were written and recorded using the Kanban tool from GitHub that can be found in [**here**](https://github.com/Cesargarciajr/ecomerce-thunder-pp5/issues)
 
   [Back to top](<#contents>)
   
