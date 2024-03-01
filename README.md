@@ -49,14 +49,7 @@ ___
 
   ### User Stories
 
-<br>    i.   As a Site User I can register an account so that create, read, update and delete orders
-<br>    ii.  As a site user I can create orders on database so that have a order created
-<br>    iii. As a Site user I can view the orders I created so that manage the orders
-<br>    iv.  As a site user I can edit my orders so that modify the details of the orders
-<br>    v. As a site user I can delete my orders so that manage the orders
-<br>    vi. As a site user I can see about us page so that check opening ours and address for collection
-<br>    vii. As a site I can see the contact details and form so that get in touch with the retail if needed
-
+    User stories were written and recorded using the Kanban tool from GitHub that can be found in [**here**](https://github.com/Cesargarciajr/ecomerce-thunder-pp5/issues)
 
   [Back to top](<#contents>)
   
