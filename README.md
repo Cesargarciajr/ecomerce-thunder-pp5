@@ -1,110 +1,359 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome USER_NAME,
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+<h1 align="center"><a href="https://galetos-orderapp-pp4-1411404b0904.herokuapp.com/" target="_blank">Thunder Nutrition</a></h1> 
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+Thunder Nutrition is an ecomerce website that sells gym related supplements and equipments. This project was developed with Python and Django for the purpose of learning and putting to practise everything I learned about Full Stack Web Development
 
-## Gitpod Reminders
+[**Link to Thunder Nutrition App Live **](https://thunder-nutrition-6bac86cc4153.herokuapp.com/)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+![Alt text](static/media/images/hero-image.png "Hero image for Readme File")
 
-`python3 -m http.server`
+# Contents
 
-A blue button should appear to click: _Make Public_,
+- [Contents](#contents)
+  - [User Experience (UX)](#user-experience-ux)
+    - [User Stories](#user-stories)
+  - [Features](#features)
+    - [Landing Page](#landing-page)
+    - [Contact Us](#contact-us)
+    - [About Us](#about-us)
+    - [Log In](#log-in)
+    - [Sign Up](#sign-up)
+    - [Menu](#menu)
+    - [New Order Form](#new-order-form)
+    - [Calendar](#calendar)
+    - [Time Selection](#time-selection)
+    - [Quantity Selection](#quantity-selection)
+    - [Orders list](#orders-list)
+    - [Edit Order](#edit-order)
+    - [Django Admin Panel](#django-admin-panel)
+    - [Approve Orders](#approve-orders)
+    - [Order Details](#order-details)
+    - [Admin Filters](#admin-filters)
+    - [Messages](#messages)
+    - [Future Features](#future-features)
+  - [Testing](#testing)
+    - [Bugs and Issues](#bugs-and-issues)
+  - [Technologies Used](#technologies-used)
+  - [Deployment](#deployment)
+  - [Credits](#credits)
+    - [Content](#content)
+    - [Media](#media)
+  - [Acknowledgments](#acknowledgments)
+- [THANK YOU!](#thank-you)
 
-Another blue button should appear to click: _Open Browser_.
+___
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: _Make Public_,
+## User Experience (UX)
 
-Another blue button should appear to click: _Open Browser_.
+  ### User Stories
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+<br>    i.   As a Site User I can register an account so that create, read, update and delete orders
+<br>    ii.  As a site user I can create orders on database so that have a order created
+<br>    iii. As a Site user I can view the orders I created so that manage the orders
+<br>    iv.  As a site user I can edit my orders so that modify the details of the orders
+<br>    v. As a site user I can delete my orders so that manage the orders
+<br>    vi. As a site user I can see about us page so that check opening ours and address for collection
+<br>    vii. As a site I can see the contact details and form so that get in touch with the retail if needed
 
-To log into the Heroku toolbelt CLI:
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+  [Back to top](<#contents>)
+  
+   - ### Agile and Kanban
+GitHub Project Boards and Kanban are instrumental in collaborative project management. Using Kanban methodology, tasks move through stages like "To do," "In progress," "Testing," and "Done," providing a visual representation and limiting work in progress.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+   ![Alt text](static/media/images/agile.png "Agile and Kanban")
 
-------
+[Back to top](<#contents>)
 
-## Release History
+  - ### FlowChart
+    The flowchart was a very useful tool to plan ahead and understand how to build the application below you can see the chart that was made using the [**Lucid**](https://lucid.co/)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+    ![Alt text](static/media/images/GaletosFlowChart.png "flowchart")
 
-**September 20 2023:** Update Python version to 3.9.17.
+[Back to top](<#contents>)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+  - ### Design Choices
+      The idea was to build a a simple "app-based" design with smooth transitions to make the UX even more seamless and intuitive. All the colors and styles were applied with the built in classes provided that can be found on the [**Bootstrap**](https://getbootstrap.com/) documentation.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+[Back to top](<#contents>)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Features
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+  ### Landing Page
+Landing page was design to look like a simple booking app "menu-based" where the user can easily find and reach what their need with no distractions or missleading information. Ofering 3 simple options as: new order, contact us or about us.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+  ![Alt text](static/media/images/landing.png "Landing Page") 
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+[Back to top](<#contents>)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+  ### Contact Us
+Contact us page has a simple form that can be filled intuitively by the user
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+  ![Alt text](static/media/images/contact.png "Contact Us") 
+  
+[Back to top](<#contents>)
+        
+  ### About Us
+About us page contains the working hours and address with a google maps API for easily directions for the user
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+  ![Alt text](static/media/images/about.png "About Us") 
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+[Back to top](<#contents>)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+  ### Log In
+Once the user choose the options new order he will be redirect to a login page that has instructions if the user does not have an account yet
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+  ![Alt text](static/media/images/singin.png "Log in") 
+ 
+[Back to top](<#contents>)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+  ### Sign Up
+If the user does not have an account already he will be asked to click the link in the log in page and follow the instructions to create a new account
 
-------
+  ![Alt text](static/media/images/singup.png "Sign Up") 
+ 
+[Back to top](<#contents>)
 
-## FAQ about the uptime script
+  ### Menu
+A menu is introduced to the user once loged in with three basic options: Home, Orders List and Log out.
 
-**Why have you added this script?**
+  ![Alt text](static/media/images/menu.png "Menu") 
+ 
+[Back to top](<#contents>)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+  ### New Order Form
+Once loged in the user will be redirected to the new order form that can be easily filled and completed.
 
-**How will this affect me?**
+  ![Alt text](static/media/images/neworder_form.png "New Order Form") 
+ 
+[Back to top](<#contents>)
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+  ### Calendar
+Whent he calendar is selected the built-in django widget pops to help user select best day suited.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+  ![Alt text](static/media/images/calendar.png "Calendar") 
+ 
+[Back to top](<#contents>)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+  ### Time Selection
+time selection render django widget as well to better UX design.
 
-**So….?**
+  ![Alt text](static/media/images/time.png "Time selection")
+   
+[Back to top](<#contents>)
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+  ### Quantity Selection
+Quantity selection could be typed in or selected by the picker
 
-**Can I opt out?**
+  ![Alt text](static/media/images/quantity.png "Quantity Selection")
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+[Back to top](<#contents>)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+  ### Orders list
+Once the order is finished user will be redirected to orders list where the user could easily place another order, edit or delete the existing ones. It was designed toeb be simple and  intuitive.
 
-**Anything more?**
+  ![Alt text](static/media/images/orders_list.png "Order List")
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+ 
+[Back to top](<#contents>)
 
----
+  ### Edit Order
+If the user choose to edit and existing order the app will be redirect the the order form page but retrieving the data from database for editing.
 
-Happy coding!
+  ![Alt text](static/media/images/edit_orders.png "Edit Order")
+
+
+[Back to top](<#contents>)
+
+  ### Django Admin Panel
+The built in Django Admin panel was setted up to help the admin to manage the orders as well as reading the messages from costumers
+
+  ![Alt text](static/media/images/admin_neworder.png "Django Admin Panel")
+
+[Back to top](<#contents>)
+
+  ### Approve Orders
+All new orders are set to be Pendind an  get easily be approved by the admin panel
+
+
+  ![Alt text](static/media/images/approve_orders.png "Approve Orders")
+
+[Back to top](<#contents>)
+
+  ### Order Details
+Admin can have access to the order details through the admin panel.
+
+  ![Alt text](static/media/images/order_details.png "Order Details")
+
+[Back to top](<#contents>)
+
+  ### Admin Filters
+Admin have some filters feature to help locate orders such as pending orders, or approved ones and so on.
+
+  ![Alt text](static/media/images/filters.png "Admin Filters")
+
+[Back to top](<#contents>)
+
+  ### Messages
+Messages sent through the contact us page can be easily found on the admin panel as well as the message details.
+
+  ![Alt text](static/media/images/messages.png "Messages")
+
+  ![Alt text](static/media/images/message_details.png "Messages Detail")
+
+[Back to top](<#contents>)
+
+
+
+  ### Future Features
+For future features I will definetly implement and disable past dates and out of work hours that I could not implement due the deadline. Also I would do some more UX design when delete or editing and a modal popup that gets a validation from user of their choice. Also a banner when order is created, updated or deleted to give user more assurance of their action. I would also implement and API system that could send a email confirmation to the user and the administrator thar a new order was created 
+
+
+[Back to top](<#contents>)
+
+## Testing
+
+| Test                | Action                   | Success Criteria  |
+  | -------------       |-------------             | -----|
+  | Landingpage loads      | Navigate to website URL  | Page loads < 5s, no errors |
+  | Links            | Click on each Navigation link  | Correct section is redirected action performed |
+  | Athentications System  | User should be able Sign Up Log In and Log Out | All functions working fine as expected |
+  | CRUD Functionality  | User should be able to create edit and delete orders | All functions working fine as expected |
+  | Responsiveness | Resize the viewport window from 320px upwards with Chrome Dev Tools. Use Responsive Design Checker to test various mobile, tablet, and large screen sizes | Page layout remains intact and adapts to screen size|
+  | Different web browsers | Runned the app in Google Chrome, Mozilla Firefox and Internet Explorer | App works responsive and layout remains intact no errors or bug detected |
+  | Different screen devices | Runned the app using a Samsung Galaxy s20 and Iphone 13 | App works responsive and layout remains intact no errors or bug detected |
+
+[Back to top](<#contents>)
+
+HTML validator
+![Alt text](static/media/images/html_validator.png "HTML Validator")
+
+PEP8 validator
+![Alt text](static/media/images/models_validator.png "PEP8 Validator")
+
+Over all Google Chrome LightHouse Report
+![Alt text](static/media/images/lighthouse.png "LightHouse Report")
+
+Automated testing with built in Django unittest
+![Alt text](static/media/images/test.png "Unittest Report")
+
+[Back to top](<#contents>)
+
+ ### Bugs and Issues
+
+Debugging and troubleshooting were done constantly throughout development.
+
+[Back to top](<#contents>)
+
+___
+
+## Technologies Used
+I used the following technologies, platforms and support in building my project:
+- The application was built in Python.
+- The [**Code Institute**](https://codeinstitute.net/) modules/lessons aided my learning and many of the concepts learned were applied in this project.
+- [**GitHub**](https://github.com/Cesargarciajr/bloom-of-life) was used for the project repository.
+- [**Code Anywhere**](https://app.codeanywhere.com/) - for IDE and editor of the code.
+- [**Django**](https://www.djangoproject.com/) - framework to develop the app and a few other libraries such as athentications system "Allauth" all specified in the requirements.txt file
+- [**Bootstrap**](https://getbootstrap.com/) - for design and choices.
+- [**Heroku**](https://www.heroku.com/platform) - was used for application deployment.
+- [**Elephant SQL**](https://www.elephantsql.com/) - for database.
+- [**PEP8CI Validator**](https://app.codeanywhere.com/) - for error and issues with the code
+- [**Lucid**](https://lucid.co/) - Flowchart used on readme file.
+
+[Back to top](<#contents>)
+
+## Deployment
+
+<details>
+<summary>GitHub Deployment</summary>
+First of all you need to have a GitHub account and I choose it because it's free and easy to create a repository to host your code and share with others.
+
+- To create a repository you just need to go to the main page at the top right you will see a "+" button just click here and then new repository
+
+- Select the name of the project and a description make it public and then create a repository
+
+- Once you created your repository go the settings section and then click on pages
+
+- Select the Branch as main and then save it.
+
+- Finally, your repository is deployed and it should show you a link so you can share it with others.
+</details>
+
+<details>
+<summary>Cloning the Repo</summary>
+
+1. Click on the "Code" button near the top right corner of the page.
+2. Copy the HTTPS or SSH URL that appears in the box.
+Open your terminal (or Git Bash on Windows) and navigate to the directory where you want to clone the repository.
+3. Type "git clone" followed by a space, and then paste the URL you copied in step 3.
+4. Press enter to run the command. This will clone the repository onto your local machine.
+5. You should now have a local copy of the GitHub repository on your machine.
+
+</details>
+
+<details>
+<summary>Forking the Repo</summary>
+
+1. Click the "Fork" button near the top right corner of the page. This will create a copy of the repository in your own GitHub account.
+2. Once the fork is complete, you will be redirected to the forked repository in your account.
+3. If you haven't already, clone the forked repository to your local machine using the steps outlined in the previous answer.
+4. Make any changes or additions you want to the code in your local copy of the repository.
+5. Commit your changes to your local repository using the "git commit" command.
+6. Push your changes to the forked repository on GitHub using the "git push" command.
+7. If you want to contribute your changes back to the original repository, create a pull request by going to the original repository's page and clicking the "New pull request" button. From there, you can compare your changes to the original repository and request that they be merged.
+8. You should now have a forked copy of the GitHub repository in your account, and you can make changes to it and contribute back to the original repository if desired.
+
+</details>
+
+<details> 
+<summary>Heroku Deployment</summary>
+
+1. First of all you need to have a Heroku account.
+2. From the Dashboard, click "New" - "Create new app".
+3. Enter a name for the app. Click "Create App".
+4. Connect your GitHub account and select the repository and branch to deploy.
+5. When you create the app, you will need to add two buildpacks from the Settings tab. The ordering is as follows:
+    - heroku/python
+    - heroku/nodejs
+6. You must then create the followinf Config Varw:
+   - PORT. Set this to 8000.
+   - DATABASE_URL. Set this to your database url.
+   - DISABLE_STATICFILES. Set to 0.
+   - SECRET_KEY. Set to your secret key.
+
+</details>
+
+[Back to top](<#contents>)
+
+## Credits
+
+  ### Content  
+  - [**Code Institute**](https://codeinstitute.net/)  - Tutor Support.
+  - [**Code Institute Python Template**](https://github.com/Code-Institute-Org/python-essentials-template) - Template for Python mock terminal in Heroku.
+  - [**GitHub**](https://github.com/) - for deployment and host.
+  - [**Code Anywhere**](https://app.codeanywhere.com/) - for IDE and editor of the code.
+  - [**W3 Schools**](https://www.w3schools.com/) - used for multiples researches and tutorials in HTML and CSS.
+  - [**Stack Overflow**](https://stackoverflow.com) - used to clarify questions and collect answers.
+  - [**PEP8 ORG**](https://pep8.org/#maximum-line-length) - solution for the flags regarding the diagrams in the PEP8 Validator 
+  - [**Real Python**](https://realpython.com/python-pep8) - Also provide with clarity the solutions
+
+ 
+[Back to top](<#contents>)
+
+  ### Media
+- [**Lucid**](https://lucid.co/) - Flowchart used on readme file.
+- [**Bootstrap**](https://getbootstrap.com/) - for design and choices.
+
+[Back to top](<#contents>)
+
+## Acknowledgments
+This project taught me a lot and helped me put in practice what I have learn throughout the Course specially getting to know more about Django frameworks and libraries. I was happy enough with the results and to be able to develop a real world application for a friend that will use it as a tool to better manage his business. I Thank the opportunity and help I got from all Code Institute Tutors, but special thanks to [**Sarah Collins**](https://github.com/SJECollins) that helped me a lot troubleshooting and explaining to me my questions.
+
+by [**Cesar Garcia**](https://github.com/Cesargarciajr)
+
+# THANK YOU!
+
+[Back to top](<#contents>)

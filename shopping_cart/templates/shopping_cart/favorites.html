@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!-- loading custom templatetag -->
+{% load shopping_cart_tools %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container mb-2">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4">Shopping Cart</h2>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            {% if shopping_cart_items %}
+            <div class="d-block d-md-none">
+                <div class="row">
+                    <div class="col">
+                        {% include "shopping_cart/shopping_cart_total.html" %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        {% include "shopping_cart/checkout-buttons.html" %}
+                        <p class="text-muted mb-5">A summary of your shopping cart contents is below</p>
+                    </div>
+                </div>
+                {% for item in shopping_cart_items %}
+                <div class="row">
+                    <div class="col-12 col-sm-6 mb-2">
+                        {% include "shopping_cart/product-image.html" %}
+                    </div>
+                    <div class="col-12 col-sm-6 mb-2">
+                        {% include "shopping_cart/product-info.html" %}
+                    </div>
+                    <div class="col-12 col-sm-6 order-sm-last">
+                        <p class="my-0">Price Each: {{ item.product.price }}€</p>
+                        <p><strong>Subtotal: </strong>{{ item.product.price | calc_subtotal:item.quantity }}€</p>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        {% include "shopping_cart/quantity-form.html" %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <hr>
+                    </div>
+                </div>
+                {% endfor %}
+                <!--Back to the top button -->
+                <div class="btt-button shadow-sm rounded-3" id="btt-button">
+                    <a class="btt-link d-flex h-100 link-underline link-underline-opacity-0" id="btt-link">
+                        <i class="fas fa-arrow-up mx-auto my-auto"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="table-responsive rounded d-none d-md-block">
+                <table class="table table-sm table-borderless">
+                    <thead class="text-black">
+                        <tr>
+                            <th scope="col">Product Info</th>
+                            <th scope="col"></th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Subtotal</th>
+                        </tr>
+                    </thead>
+
+                    {% for item in shopping_cart_items %}
+                    <tr>
+                        <td class="p-3 w-25">
+                            {% include "shopping_cart/product-image.html" %}
+                        </td>
+                        <td class="py-3">
+                            {% include "shopping_cart/product-info.html" %}
+                        </td>
+                        <td class="py-3">
+                            <p class="my-0">${{ item.product.price }}</p>
+                        </td>
+                        <td class="py-3 w-25 m-auto">
+                            {% include "shopping_cart/quantity-form.html" %}
+                        </td>
+                        <td class="py-3">
+                            <p class="my-0">{{ item.product.price | calc_subtotal:item.quantity }}€</p>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="5" class="pt-5 text-right">
+                            {% include "shopping_cart/shopping_cart_total.html" %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="text-right">
+                            {% include "shopping_cart/checkout-buttons.html" %}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            {% else %}
+            <p class="lead mb-5">Your bag is empty.</p>
+            <a href="{% url 'products' %}" class="btn btn-color-base rounded-3 btn-lg">
+                <span class="icon">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span class="text-uppercase">Keep Shopping</span>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+    $('.btt-link').click(function (e) {
+        window.scrollTo(0, 0)
+    })
+</script>
+{% include 'products/includes/quantity_script.html' %}
+
+<script type="text/javascript">
+    // Update quantity on click
+    $('.update-link').click(function (e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // Remove item and reload on click
+    $('.remove-item').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('product_size');
+        var url = `/shopping_cart/remove/${itemId}/`;
+        var data = {
+            'csrfmiddlewaretoken': csrfToken,
+            'product_size': size
+        };
+
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    })
+</script>
+{% endblock %}

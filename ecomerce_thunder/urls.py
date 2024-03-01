@@ -19,12 +19,13 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')), # including all allauth urls to main url project
-    path('', include('home.urls')), # including all urls from home app that renders index.html
-    path('products/', include('products.urls')), # including all urls from products app that renders its templates
-    path('shopping_cart/', include('shopping_cart.urls')), # including all urls from shopping_cart app that renders its templates
-    path('checkout/', include('checkout.urls')), # including all urls from checkout app that renders its templates
-    path('profiles/', include('profiles.urls'),) # including all urls from profiles app that renders its templates
+    path('accounts/', include('allauth.urls')),
+    path('', include('home.urls')),
+    path('products/', include('products.urls')),
+    path('shopping_cart/', include('shopping_cart.urls')),
+    path('checkout/', include('checkout.urls')),
+    path('profiles/', include('profiles.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
