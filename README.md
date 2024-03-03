@@ -15,22 +15,16 @@ Introducing Thunder Nutrition an e-commerce platform is the culmination of my jo
     - [User Stories](#user-stories)
   - [Features](#features)
     - [Landing Page](#landing-page)
-    - [Contact Us](#contact-us)
-    - [About Us](#about-us)
+    - [Produts](#products)
+    - [Product Details](#product-details)
     - [Log In](#log-in)
-    - [Sign Up](#sign-up)
-    - [Menu](#menu)
-    - [New Order Form](#new-order-form)
-    - [Calendar](#calendar)
-    - [Time Selection](#time-selection)
-    - [Quantity Selection](#quantity-selection)
-    - [Orders list](#orders-list)
-    - [Edit Order](#edit-order)
-    - [Django Admin Panel](#django-admin-panel)
-    - [Approve Orders](#approve-orders)
-    - [Order Details](#order-details)
-    - [Admin Filters](#admin-filters)
+    - [Shopping Cart](#shopping-cart)
     - [Messages](#messages)
+    - [Checkout Page](#checkout-page)
+    - [Checkout Success](#checkout-success)
+    - [Add Product](#add-product)
+    - [Edit Products](#edit-products)
+    - [Profile Page](#profile-page)
     - [Future Features](#future-features)
   - [Testing](#testing)
     - [Bugs and Issues](#bugs-and-issues)
@@ -61,148 +55,110 @@ GitHub Project Boards and Kanban are instrumental in collaborative project manag
 [Back to top](<#contents>)
 
   - ### FlowChart
-    The flowchart was a very useful tool to plan ahead and understand how to build the application below you can see the chart that was made using the [**Lucid**](https://lucid.co/)
+    The flowchart was a very useful tool to plan ahead the models and understand how to build the application below you can see the chart that was made using the [**Lucid**](https://lucid.co/)
 
-    ![Alt text](static/media/images/GaletosFlowChart.png "flowchart")
+    ![Alt text](static/media/thunder-nutrition-flow-chart.png "flowchart")
 
 [Back to top](<#contents>)
 
   - ### Design Choices
       The idea was to build a a simple "app-based" design with smooth transitions to make the UX even more seamless and intuitive. All the colors and styles were applied with the built in classes provided that can be found on the [**Bootstrap**](https://getbootstrap.com/) documentation.
 
+    ![Alt text](static/media/colors.png "colors")
+
+  - ### Wireframes
+      wireframes was designed on [**Balsamiq**]([https://lucid.co/](https://balsamiq.cloud/))
+
+    ![Alt text](static/media/landing-page-wf.png "landing-page")
+    ![Alt text](static/media/products-page-wf.png "products-page-wf")    
+    ![Alt text](static/media/product-detail-wf.png "product-detail-wf")
+    ![Alt text](static/media/shopping-cart-page-wf.png "shopping-cart-page-wf")    
+    ![Alt text](static/media/checkout-page-wf.png "checkout-page-wf")
+    ![Alt text](static/media/checkout-success-page-wf.png "checkout-success-page-wf")
 
 [Back to top](<#contents>)
 
 ## Features
 
   ### Landing Page
-Landing page was design to look like a simple booking app "menu-based" where the user can easily find and reach what their need with no distractions or missleading information. Ofering 3 simple options as: new order, contact us or about us.
+Landing page was design to look like a simple with a intuitive button to go straight to shopping
 
-  ![Alt text](static/media/images/landing.png "Landing Page") 
+  ![Alt text](static/media/hero_readme.png "Landing Page") 
 
 [Back to top](<#contents>)
 
-  ### Contact Us
-Contact us page has a simple form that can be filled intuitively by the user
+  ### Products
+Products page showing products clear and shortcut button to add to cart
 
-  ![Alt text](static/media/images/contact.png "Contact Us") 
+  ![Alt text](static/media/products-page.png "products page") 
   
 [Back to top](<#contents>)
         
-  ### About Us
-About us page contains the working hours and address with a google maps API for easily directions for the user
+  ### Product Details
+Product Detail page showing products price, description and button to add to cart
 
-  ![Alt text](static/media/images/about.png "About Us") 
+  ![Alt text](static/media/product-detail.png "product details") 
 
 [Back to top](<#contents>)
 
   ### Log In
 Once the user choose the options new order he will be redirect to a login page that has instructions if the user does not have an account yet
 
-  ![Alt text](static/media/images/singin.png "Log in") 
+  ![Alt text](static/media/login-page.png "login-page") 
  
 [Back to top](<#contents>)
 
-  ### Sign Up
-If the user does not have an account already he will be asked to click the link in the log in page and follow the instructions to create a new account
+  ### Shopping Cart
+Shopping cart gives the user hability to edit the cart, update quantity or delete product as well shows the user total and delivery cost
 
-  ![Alt text](static/media/images/singup.png "Sign Up") 
+  ![Alt text](static/media/shopping-cart.png "shopping cart") 
  
-[Back to top](<#contents>)
-
-  ### Menu
-A menu is introduced to the user once loged in with three basic options: Home, Orders List and Log out.
-
-  ![Alt text](static/media/images/menu.png "Menu") 
- 
-[Back to top](<#contents>)
-
-  ### New Order Form
-Once loged in the user will be redirected to the new order form that can be easily filled and completed.
-
-  ![Alt text](static/media/images/neworder_form.png "New Order Form") 
- 
-[Back to top](<#contents>)
-
-  ### Calendar
-Whent he calendar is selected the built-in django widget pops to help user select best day suited.
-
-  ![Alt text](static/media/images/calendar.png "Calendar") 
- 
-[Back to top](<#contents>)
-
-  ### Time Selection
-time selection render django widget as well to better UX design.
-
-  ![Alt text](static/media/images/time.png "Time selection")
-   
-[Back to top](<#contents>)
-
-  ### Quantity Selection
-Quantity selection could be typed in or selected by the picker
-
-  ![Alt text](static/media/images/quantity.png "Quantity Selection")
-
-[Back to top](<#contents>)
-
-  ### Orders list
-Once the order is finished user will be redirected to orders list where the user could easily place another order, edit or delete the existing ones. It was designed toeb be simple and  intuitive.
-
-  ![Alt text](static/media/images/orders_list.png "Order List")
-
- 
-[Back to top](<#contents>)
-
-  ### Edit Order
-If the user choose to edit and existing order the app will be redirect the the order form page but retrieving the data from database for editing.
-
-  ![Alt text](static/media/images/edit_orders.png "Edit Order")
-
-
-[Back to top](<#contents>)
-
-  ### Django Admin Panel
-The built in Django Admin panel was setted up to help the admin to manage the orders as well as reading the messages from costumers
-
-  ![Alt text](static/media/images/admin_neworder.png "Django Admin Panel")
-
-[Back to top](<#contents>)
-
-  ### Approve Orders
-All new orders are set to be Pendind an  get easily be approved by the admin panel
-
-
-  ![Alt text](static/media/images/approve_orders.png "Approve Orders")
-
-[Back to top](<#contents>)
-
-  ### Order Details
-Admin can have access to the order details through the admin panel.
-
-  ![Alt text](static/media/images/order_details.png "Order Details")
-
-[Back to top](<#contents>)
-
-  ### Admin Filters
-Admin have some filters feature to help locate orders such as pending orders, or approved ones and so on.
-
-  ![Alt text](static/media/images/filters.png "Admin Filters")
-
 [Back to top](<#contents>)
 
   ### Messages
-Messages sent through the contact us page can be easily found on the admin panel as well as the message details.
+As use add products to cart a message with a preview of the shopping cart will be displayed
 
-  ![Alt text](static/media/images/messages.png "Messages")
+  ![Alt text](static/media/messages.png "Messages") 
+ 
+[Back to top](<#contents>)
 
-  ![Alt text](static/media/images/message_details.png "Messages Detail")
+  ### Checkout Page
+User is able to input their data for delivery securly and make payment through Stripe widget. Also check the order summary before purchase
+
+  ![Alt text](static/media/checkout-page.png "checkout page") 
+ 
+[Back to top](<#contents>)
+
+  ### Checkout Success
+Once payment is success user will see a order summary.
+
+  ![Alt text](static/media/checkout-success-page.png "checkout success") 
+ 
+[Back to top](<#contents>)
+
+  ### Add Product
+Administrator or Staff is able to add a product
+
+  ![Alt text](static/media/add-product-page.png "add product")
+   
+[Back to top](<#contents>)
+
+  ### Edit Products
+As administrator or Staff they can access the edit product page and edit the products
+
+  ![Alt text](static/media/edit-product-page.png "edit products")
 
 [Back to top](<#contents>)
 
+  ### Profile Page
+Here user is able to edit his delivery details as well as check order history
 
+  ![Alt text](static/media/my-profile-page.png "profile page")
+
+[Back to top](<#contents>)
 
   ### Future Features
-For future features I will definetly implement and disable past dates and out of work hours that I could not implement due the deadline. Also I would do some more UX design when delete or editing and a modal popup that gets a validation from user of their choice. Also a banner when order is created, updated or deleted to give user more assurance of their action. I would also implement and API system that could send a email confirmation to the user and the administrator thar a new order was created 
+For future features I will definetly implement a favorites page where user could add to favorites, also some sort of banners for advertisement to get sponsored ads on the website. 
 
 
 [Back to top](<#contents>)
@@ -221,23 +177,18 @@ For future features I will definetly implement and disable past dates and out of
 
 [Back to top](<#contents>)
 
-HTML validator
-![Alt text](static/media/images/html_validator.png "HTML Validator")
-
-PEP8 validator
-![Alt text](static/media/images/models_validator.png "PEP8 Validator")
-
-Over all Google Chrome LightHouse Report
-![Alt text](static/media/images/lighthouse.png "LightHouse Report")
-
-Automated testing with built in Django unittest
-![Alt text](static/media/images/test.png "Unittest Report")
+- All HTML files were passed through the W3C validator with no errors
+- All JavaScript files were passed through JSHint with no errors present.
+- The website was tested on major browsers including Chrome, Safari, Firefox and Edge.
+- All user flows were tested in depth including navigating through the purchase flow, clicking CTAs and links, and form submission.
+- All forms were tested to ensure validation was present and that forms could be submitted without error
+- Lighthouse was used to test for Performance, Accessibility, Best Practices and SEO and adjustments were made to improve test results.
 
 [Back to top](<#contents>)
 
  ### Bugs and Issues
 
-Debugging and troubleshooting were done constantly throughout development.
+Through the development accidentally some of the keys were pushed to github but they were all re-generated and add to the environ on heroku app.
 
 [Back to top](<#contents>)
 
@@ -247,13 +198,12 @@ ___
 I used the following technologies, platforms and support in building my project:
 - The application was built in Python.
 - The [**Code Institute**](https://codeinstitute.net/) modules/lessons aided my learning and many of the concepts learned were applied in this project.
-- [**GitHub**](https://github.com/Cesargarciajr/bloom-of-life) was used for the project repository.
+- [**GitHub**](https://github.com/Cesargarciajr/) was used for the project repository.
 - [**Code Anywhere**](https://app.codeanywhere.com/) - for IDE and editor of the code.
 - [**Django**](https://www.djangoproject.com/) - framework to develop the app and a few other libraries such as athentications system "Allauth" all specified in the requirements.txt file
 - [**Bootstrap**](https://getbootstrap.com/) - for design and choices.
 - [**Heroku**](https://www.heroku.com/platform) - was used for application deployment.
 - [**Elephant SQL**](https://www.elephantsql.com/) - for database.
-- [**PEP8CI Validator**](https://app.codeanywhere.com/) - for error and issues with the code
 - [**Lucid**](https://lucid.co/) - Flowchart used on readme file.
 
 [Back to top](<#contents>)
@@ -330,7 +280,6 @@ Open your terminal (or Git Bash on Windows) and navigate to the directory where 
   - [**Code Anywhere**](https://app.codeanywhere.com/) - for IDE and editor of the code.
   - [**W3 Schools**](https://www.w3schools.com/) - used for multiples researches and tutorials in HTML and CSS.
   - [**Stack Overflow**](https://stackoverflow.com) - used to clarify questions and collect answers.
-  - [**PEP8 ORG**](https://pep8.org/#maximum-line-length) - solution for the flags regarding the diagrams in the PEP8 Validator 
   - [**Real Python**](https://realpython.com/python-pep8) - Also provide with clarity the solutions
 
  
@@ -343,7 +292,7 @@ Open your terminal (or Git Bash on Windows) and navigate to the directory where 
 [Back to top](<#contents>)
 
 ## Acknowledgments
-This project taught me a lot and helped me put in practice what I have learn throughout the Course specially getting to know more about Django frameworks and libraries. I was happy enough with the results and to be able to develop a real world application for a friend that will use it as a tool to better manage his business. I Thank the opportunity and help I got from all Code Institute Tutors, but special thanks to [**Sarah Collins**](https://github.com/SJECollins) that helped me a lot troubleshooting and explaining to me my questions.
+This project taught me a lot and helped me put in practice what I have learn throughout the Course specially getting to know more about Django frameworks and libraries. I was happy enough with the results and to be able to develop a real world application for a friend that will use it as a tool to better manage his business. I Thank the opportunity and help I got from all Code Institute Tutors, but special thanks to Tutors that helped me a lot troubleshooting and explaining to me my questions.
 
 by [**Cesar Garcia**](https://github.com/Cesargarciajr)
 
