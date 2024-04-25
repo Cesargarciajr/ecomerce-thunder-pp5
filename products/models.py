@@ -1,4 +1,5 @@
 from django.db import models
+from profiles.models import UserProfile
 
 # Create your models here.
 
@@ -27,3 +28,19 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+class Reviews(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="review")
+    name = models.ForeignKey(UserProfile, max_length=80)
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    stars = models.ManyToManyField(UserProfile, related_name='stars', blank=True)
+
+    class Meta:
+        ordering = ["created_on"]
+
+    def __str__(self):
+        return f"Review {self.body} by {self.name}"
+    
+    def number_of_likes(self):
+        return self.likes.count()
