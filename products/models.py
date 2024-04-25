@@ -31,7 +31,7 @@ class Product(models.Model):
 
 class Reviews(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="review")
-    name = models.ForeignKey(UserProfile, max_length=80)
+    name = models.ForeignKey(UserProfile, on_delete=models.CASCADE, max_length=80)
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     stars = models.ManyToManyField(UserProfile, related_name='stars', blank=True)
