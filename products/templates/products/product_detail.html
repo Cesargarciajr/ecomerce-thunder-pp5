@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load rating_filters %}
 
 {% block page_header %}
 <div class="container header-container">
@@ -105,10 +106,12 @@
                             <div class="card-review p-3" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; border-radius: 10px;">
                                 <h6 class="mb-0">{{ review.user.username }}</h6>
                                 <span>
+                                    
+
                                     {% for rating in ratings %}
-                                        {% if rating.product_id == review.product_id %}
-                                            {% for star in rating.stars %}
-                                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                        {% if rating.product_id == review.product_id and rating.user == review.user %}
+                                            {% for star in rating.stars|to_range %}
+                                                <i class="fa-solid fa-star mt-3" style="color: #FFD43B;"></i>
                                             {% endfor %}
                                         {% endif %}
                                     {% endfor %}
@@ -120,23 +123,32 @@
                     {% else %}
                         <p>No reviews yet</p>
                     {% endif %}
-                    
                         <hr>
-                        <form action="">
-                            <div class="form-row">
-                                <div class="col-12">
-                                    <p class="mt-3"><strong>Write your Review: </strong></p>
-                                    <div class="form-group col-12">
-                                        <div class="input-group col-12">
-                                            <div class="input-group-prepend col-12">
-                                                <textarea class="form-control col-12" name="comment" id="comment" rows="6" placeholder="Your feedback is important to us!"></textarea>
-                                                <button class="decrement-qty btn btn-qnty rounded-3 mt-2">Submit</button>
+                        {% if user.is_authenticated %}
+                            <form action="">
+                                <div class="form-row">
+                                    <div class="col-12">
+                                        <h5><strong>Your feedback is important to us!</strong></h5>
+                                        <p class="m-0">How many stars?</p>
+                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                        <input class="form-control rounded-2 w-25" type="number" max="5" min="0" value="1" required>
+                                        <p class="mt-3"><strong>Write your Review: </strong></p>
+                                        <div class="form-group col-12">
+                                            <div class="input-group col-12">
+                                                <div class="input-group-prepend col-12">
+                                                    <textarea class="form-control col-12" name="comment" id="comment" rows="6" placeholder="Please write your review here... "></textarea>
+                                                    <button class="decrement-qty btn btn-qnty rounded-3 mt-2">Submit</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        {% endif %}
                     </div>
                 </div>
             </div>

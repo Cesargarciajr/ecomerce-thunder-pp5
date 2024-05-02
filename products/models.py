@@ -45,7 +45,7 @@ class Review(models.Model):
 
 
 class Rating(models.Model):
-    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     stars = models.IntegerField(default=0)
 

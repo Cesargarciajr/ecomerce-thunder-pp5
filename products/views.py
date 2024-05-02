@@ -65,9 +65,9 @@ def product_detail(request, product_id):
     if request.method == "GET":
         product = get_object_or_404(Product, pk=product_id)
         reviews = Review.objects.filter(product=product)
-        rating = Rating.objects.filter(product=product)
+        ratings = Rating.objects.filter(product=product)
 
-    return render(request, 'products/product_detail.html', {'product': product, 'reviews': reviews, 'rating': rating })
+    return render(request, 'products/product_detail.html', {'product': product, 'reviews': reviews, 'ratings': ratings, })
 
 
 @login_required
