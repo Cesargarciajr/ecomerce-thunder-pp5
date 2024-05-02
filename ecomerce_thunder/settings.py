@@ -29,10 +29,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY','')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-cesargarcia-ecomercethu-h0clgdzew2r.ws-eu108.gitpod.io',
-                '8000-cesargarcia-ecomercethu-h0clgdzew2r.ws-eu108.gitpod.io',
+ALLOWED_HOSTS = ['8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu110.gitpod.io',
                 'thunder-nutrition-6bac86cc4153.herokuapp.com',
-                '8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu110.gitpod.io']
+                ]
 
 
 # Application definition
@@ -95,8 +94,8 @@ TEMPLATES = [
 ]
 
 # Django-Allauth backends needed settings
-CSRF_TRUSTED_ORIGINS = ['https://8000-cesargarcia-ecomercethu-h0clgdzew2r.ws-eu108.gitpod.io',
-                        'https://8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu110.gitpod.io'] # Required by Django 4 update https://docs.djangoproject.com/en/dev/releases/4.0/#format-change
+CSRF_TRUSTED_ORIGINS = ['https://8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu110.gitpod.io',
+                        'https://8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu112.gitpod.io'] # Required by Django 4 update https://docs.djangoproject.com/en/dev/releases/4.0/#format-change
 
 # Toasts Messages storage
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'

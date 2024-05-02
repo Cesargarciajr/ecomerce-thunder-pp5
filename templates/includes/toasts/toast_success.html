@@ -35,7 +35,7 @@
                     </p></strong>
                     {% if free_delivery_delta > 0 %}
                         <p class="mt-1 mb-0 p-2 text-danger bg-warning-subtle shadow-sm text-center">
-                            Spend <strong>${{ free_delivery_delta }}</strong> more to get free next day delivery!
+                            Spend <strong>{{ free_delivery_delta }} €</strong> more to get free next day delivery!
                         </p>
                     {% endif %}
                     <a href="{% url 'view_shopping_cart' %}" class="btn btn-color-base rounded-3" id="toast-checkout">

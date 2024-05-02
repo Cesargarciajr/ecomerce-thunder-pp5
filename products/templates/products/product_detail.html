@@ -87,6 +87,58 @@
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>
                 </form>
+                <hr>
+                <div class="row">
+                    <div class="col-12">
+                        <h5 class="mb-0">Reviews</h5>
+                        <span class="inline">
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                        </span>
+                        <br>
+                        <br>
+                        {% if reviews %}
+                        {% for review in reviews %}
+                            <div class="card-review p-3" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; border-radius: 10px;">
+                                <h6 class="mb-0">{{ review.user.username }}</h6>
+                                <span>
+                                    {% for rating in ratings %}
+                                        {% if rating.product_id == review.product_id %}
+                                            {% for star in rating.stars %}
+                                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                </span>
+                                <p>{{ review.comment }}</p>
+                            </div>
+                            <br>
+                        {% endfor %}
+                    {% else %}
+                        <p>No reviews yet</p>
+                    {% endif %}
+                    
+                        <hr>
+                        <form action="">
+                            <div class="form-row">
+                                <div class="col-12">
+                                    <p class="mt-3"><strong>Write your Review: </strong></p>
+                                    <div class="form-group col-12">
+                                        <div class="input-group col-12">
+                                            <div class="input-group-prepend col-12">
+                                                <textarea class="form-control col-12" name="comment" id="comment" rows="6" placeholder="Your feedback is important to us!"></textarea>
+                                                <button class="decrement-qty btn btn-qnty rounded-3 mt-2">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

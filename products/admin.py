@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category
+from .models import Product, Category, Review, Rating
 
 # Register your models here.
 
@@ -29,3 +29,5 @@ class CategoryAdmin(admin.ModelAdmin):
 # Added the classes to the admin django panel
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(Review)
+admin.site.register(Rating)

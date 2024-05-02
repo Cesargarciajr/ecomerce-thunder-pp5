@@ -1,5 +1,6 @@
 from django.db import models
 from profiles.models import UserProfile
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -29,18 +30,24 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
-class Reviews(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="review")
-    name = models.ForeignKey(UserProfile, on_delete=models.CASCADE, max_length=80)
-    body = models.TextField()
+
+class Review(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="reviews")
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    comment = models.TextField(max_length=300, null=False, blank=False)
     created_on = models.DateTimeField(auto_now_add=True)
-    stars = models.ManyToManyField(UserProfile, related_name='stars', blank=True)
 
     class Meta:
         ordering = ["created_on"]
 
     def __str__(self):
-        return f"Review {self.body} by {self.name}"
-    
-    def number_of_likes(self):
-        return self.likes.count()
+        return f"Review {self.comment} by {self.user.username}"
+
+
+class Rating(models.Model):
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    stars = models.IntegerField(default=0)
+
+    def number_of_stars(self):
+        return self.stars
