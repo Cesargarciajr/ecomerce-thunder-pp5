@@ -89,31 +89,26 @@
                     </div>
                 </form>
                 <hr>
-                <div class="row">
-                    <div class="col-12">
-                        <h5 class="mb-0">Reviews</h5>
-                        <span class="inline">
+                <div class="row align-items-center justify-content-center">
+                    <h5> 
+                        {% if total_reviews > 0 %}
+                            ({{total_reviews }})
+                        {% endif %}
+                        Reviews
+                        {% for star in avg_rate|to_range %}
                             <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                        </span>
-                        <br>
-                        <br>
+                        {% endfor %}
+                        {% if avg_rate > 0 %}
+                            {{ avg_rate }}/5
+                        {% endif %}
+                    </h5>
                         {% if reviews %}
                         {% for review in reviews %}
-                            <div class="card-review p-3" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; border-radius: 10px;">
+                            <div class="card-review p-3 mt-3" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; border-radius: 10px;">
                                 <h6 class="mb-0">{{ review.user.username }}</h6>
                                 <span>
-                                    
-
-                                    {% for rating in ratings %}
-                                        {% if rating.product_id == review.product_id and rating.user == review.user %}
-                                            {% for star in rating.stars|to_range %}
-                                                <i class="fa-solid fa-star mt-3" style="color: #FFD43B;"></i>
-                                            {% endfor %}
-                                        {% endif %}
+                                    {% for star in review.stars|to_range %}
+                                            <i class="fa-solid fa-star mt-3" style="color: #FFD43B;"></i>
                                     {% endfor %}
                                 </span>
                                 <p>{{ review.comment }}</p>
@@ -123,32 +118,30 @@
                     {% else %}
                         <p>No reviews yet</p>
                     {% endif %}
-                        <hr>
-                        {% if user.is_authenticated %}
-                            <form action="">
-                                <div class="form-row">
-                                    <div class="col-12">
-                                        <h5><strong>Your feedback is important to us!</strong></h5>
-                                        <p class="m-0">How many stars?</p>
-                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                                        <input class="form-control rounded-2 w-25" type="number" max="5" min="0" value="1" required>
-                                        <p class="mt-3"><strong>Write your Review: </strong></p>
-                                        <div class="form-group col-12">
-                                            <div class="input-group col-12">
-                                                <div class="input-group-prepend col-12">
-                                                    <textarea class="form-control col-12" name="comment" id="comment" rows="6" placeholder="Please write your review here... "></textarea>
-                                                    <button class="decrement-qty btn btn-qnty rounded-3 mt-2">Submit</button>
-                                                </div>
-                                            </div>
+                        <hr>{% if user.is_authenticated %}
+                        <form action="{% url 'product_detail' product.id %}" method="POST">
+                            {% csrf_token %}
+                            <div class="form-row">
+                                <div class="col-12">
+                                    <h5>Your feedback is important to us!</h5>
+                                    <p class="m-0">How many stars?</p>
+                                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                    <input class="form-control rounded-2 w-25" name="rate" type="number" max="5" min="0" value="1" required>
+                                    <p class="mt-3"><strong>Write your Review: </strong></p>
+                                    <div class="form-group col-12">
+                                        <div class="input-group col-12">
+                                            <textarea class="form-control col-12" name="comment" id="comment" rows="6" placeholder="Please write your review here..."></textarea>
                                         </div>
                                     </div>
+                                    <input type="submit" value="Submit" class="btn btn-color-base rounded-3 mt-2">
                                 </div>
-                            </form>
-                        {% endif %}
+                            </div>
+                        </form>
+                    {% endif %}
                     </div>
                 </div>
             </div>

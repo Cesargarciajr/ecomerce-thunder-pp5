@@ -3,8 +3,10 @@ from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
+from django.db.models import Avg
+import math
 
-from .models import Product, Category, Review, Rating
+from .models import Product, Category, Review
 from .forms import ProductForm
 
 
@@ -62,12 +64,42 @@ def product_detail(request, product_id):
     """
     A view to show individual product details
     """
-    if request.method == "GET":
-        product = get_object_or_404(Product, pk=product_id)
-        reviews = Review.objects.filter(product=product)
-        ratings = Rating.objects.filter(product=product)
+    product = get_object_or_404(Product, pk=product_id)
+    reviews = Review.objects.filter(product=product)
 
-    return render(request, 'products/product_detail.html', {'product': product, 'reviews': reviews, 'ratings': ratings, })
+    # Calculating avarage stars 
+    avg_rate = reviews.aggregate(average_stars=Avg('stars'))['average_stars']
+    avg_rate =round(avg_rate,1) if avg_rate is not None else 0
+    round_avg = math.ceil(avg_rate) if avg_rate is not None else 0
+
+    # Summing total of reviews
+    total_reviews = reviews.count()
+    
+    if request.method == "POST":
+        comment = request.POST.get("comment")
+        rate = request.POST.get("rate")
+        
+        # Create and save comment review
+        review = Review.objects.create(
+            product=product,
+            user=request.user,
+            stars=rate,
+            comment=comment
+        )
+
+        messages.success(request, 'Your Review was posted successfully!')
+        return redirect('product_detail', product_id=product.id)
+    
+    context = {
+        'product': product, 
+        'reviews': reviews, 
+        'avg_rate' : avg_rate, 
+        'round_avg' : round_avg,
+        'total_reviews': total_reviews,
+    }
+
+    return render(request, 'products/product_detail.html', context)
+
 
 
 @login_required
