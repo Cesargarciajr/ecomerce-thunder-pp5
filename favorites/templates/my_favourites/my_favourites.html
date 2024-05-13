@@ -24,7 +24,7 @@
         <div class="row">
                 {% if myFavourites %}
                     {% for item in myFavourites %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-3">
                             <div class="card h-100 border-0" id="product-card">
                                 <a href="{% url 'product_detail' item.product.id %}">
                                     <img class="card-img-top img-fluid p-3" id="product-img" src="{{ item.product.image_url }}"
@@ -76,15 +76,38 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Fixing the hr element in different screens sizes -->
+                        {% if forloop.counter|divisibleby:1 %}
+                            <div class="col-12 d-sm-none">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:2 %}
+                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:3 %}
+                            <div class="col-12 d-none d-lg-block d-xl-none">
+                                <hr>
+                            </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:4 %}
+                            <div class="col-12 d-none d-xl-block">
+                                <hr>
+                            </div>
+                        {% endif %}
                     {% endfor %}
                 {% else %}
-                    <p class="lead mb-5">There is no item added to you favourites yet.</p>
+                <div class="col-3">
+                    <p class="lead mb-5">Your bag is empty.</p>
                     <a href="{% url 'products' %}" class="btn btn-color-base rounded-3 btn-lg">
                         <span class="icon">
                             <i class="fas fa-chevron-left"></i>
                         </span>
                         <span class="text-uppercase">Keep Shopping</span>
                     </a>
+                </div>
             {% endif %}
             </div>
         </div>
