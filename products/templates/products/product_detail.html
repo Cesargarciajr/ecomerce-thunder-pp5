@@ -21,7 +21,7 @@
                 </a>
             </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4">
+        <div class="col-12 col-md-6 col-lg-5">
             <div class="product-details-container mb-5 mt-md-5">
                 <h4 class="mb-0">{{ product.name }}</h4>
                 <hr>
@@ -75,33 +75,48 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-12">
-                            <a href="{% url 'products' %}" class="btn btn-shopping-cart rounded-3 mt-5 btn-color-base">
-                                <span class="icon">
-                                    <i class="fas fa-chevron-left"></i>
-                                </span>
-                                <span class="text-uppercase">Keep Shopping</span>
-                            </a>
-                            <input type="submit" class="btn rounded-3 btn-shopping-cart text-uppercase mt-5" value="Add to Cart">
-                        </div>
-                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>
                 </form>
-                <hr>
-                <div class="row align-items-center justify-content-center m-1">
-                    <h5> 
-                        {% if total_reviews > 0 %}
-                            ({{total_reviews }})
-                        {% endif %}
-                        Reviews
-                        {% for star in avg_rate|to_range %}
-                            <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                        {% endfor %}
-                        {% if avg_rate > 0 %}
-                            {{ avg_rate }}/5
-                        {% endif %}
-                    </h5>
+                <div class="col-12">
+                    <a href="{% url 'products' %}" class="btn btn-shopping-cart rounded-3 mt-5 btn-color-base">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="text-uppercase">Keep Shopping</span>
+                    </a>
+                    <button type="submit" class="btn rounded-3 btn-shopping-cart text-uppercase mt-5">
+                        <i class="fas fa-shopping-cart"></i> Add to cart
+                    </button>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    </form>
+                    <div class="col">
+                        <form class="form" action="" method="POST">
+                            {% csrf_token %}
+                            <div class="form-row mt-3">
+                                <div class="">
+                                    <input class="form-control qty_input" type="hidden" name="quantity" value="1" min="1" max="99" data-item_id="{{ item.product.id }}" id="id_qty_{{ item.product.id }}">
+                                    <button type="submit" class="btn rounded-3 btn-shopping-cart text-uppercase"><i class="fas fa-heart"></i> Add to Favourites</button>
+                                </div>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row align-items-center justify-content-center m-1">
+                <h5> 
+                    {% if total_reviews > 0 %}
+                        ({{total_reviews }})
+                    {% endif %}
+                    Reviews
+                    {% for star in avg_rate|to_range %}
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    {% endfor %}
+                    {% if avg_rate > 0 %}
+                        {{ avg_rate }}/5
+                    {% endif %}
+                </h5>
                         {% if reviews %}
                         {% for review in reviews %}
                             <div class="card-review p-3 mt-3" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; border-radius: 10px;">
