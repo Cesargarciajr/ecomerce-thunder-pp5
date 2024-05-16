@@ -103,11 +103,11 @@
                                             </form>
                                         </div>
                                         <div class="col">
-                                            <form class="form" action="" method="POST">
+                                            <form class="form" action="{% url 'add_to_favourites' product_id=product.id %}" method="POST">
                                                 {% csrf_token %}
                                                 <div class="form-row mt-3">
                                                     <div class="">
-                                                        <input class="form-control qty_input" type="hidden" name="quantity" value="1" min="1" max="99" data-item_id="{{ item.product.id }}" id="id_qty_{{ item.product.id }}">
+                                                        <input class="form-control qty_input" type="hidden" name="favourites" value="1" min="1" max="99" data-item_id="{{ item.product.id }}" id="id_qty_{{ item.product.id }}">
                                                         <button type="submit" class="btn rounded-3 btn-shopping-cart text-uppercase"><i class="fas fa-heart"></i> Add to Favourites</button>
                                                     </div>
                                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">

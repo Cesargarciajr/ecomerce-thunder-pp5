@@ -22,22 +22,22 @@
             </div>
         </div>
         <div class="row">
-                {% if myFavourites %}
-                    {% for item in myFavourites %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-3">
-                            <div class="card h-100 border-0" id="product-card">
-                                <a href="{% url 'product_detail' item.product.id %}">
-                                    <img class="card-img-top img-fluid p-3" id="product-img" src="{{ item.product.image_url }}"
-                                        alt="{{ item.product.name }}">
-                                </a>
-                                <div class="card-body pb-0">
-                                    <p class="mb-0">{{ item.product.name }}</p>
-                                </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">{{ item.product.price }}€</p>
-                                            {% if item.product.category %}
+            {% if myFavourites %}
+                {% for item in myFavourites %}
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-3">
+                        <div class="card h-100 border-0" id="product-card">
+                            <a href="{% url 'product_detail' item.product.id %}">
+                                <img class="card-img-top img-fluid p-3" id="product-img" src="{{ item.product.image_url }}"
+                                    alt="{{ item.product.name }}">
+                            </a>
+                            <div class="card-body pb-0">
+                                <p class="mb-0">{{ item.product.name }}</p>
+                            </div>
+                            <div class="card-footer bg-white pt-0 border-0 text-left">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="lead mb-0 text-left font-weight-bold">{{ item.product.price }}€</p>
+                                        {% if item.product.category %}
                                             <p class="small mt-1 mb-0">
                                                 <a class="text-muted link-underline link-underline-opacity-0"
                                                     href="{% url 'products' %}?category={{ item.product.category.name }}">
@@ -58,7 +58,7 @@
                                                     </form>
                                                 </div>
                                                 <div class="col">
-                                                    <form class="form" action="" method="POST">
+                                                    <form class="form" action="{% url 'remove_from_favourites' item.product.id %}" method="POST">
                                                         {% csrf_token %}
                                                         <div class="form-row mt-3">
                                                             <div class="col-3">
@@ -70,35 +70,14 @@
                                                     </form>
                                                 </div>
                                             </div>                                            
-                                            {% endif %}
-                                        </div>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Fixing the hr element in different screens sizes -->
-                        {% if forloop.counter|divisibleby:1 %}
-                            <div class="col-12 d-sm-none">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:2 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:3 %}
-                            <div class="col-12 d-none d-lg-block d-xl-none">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:4 %}
-                            <div class="col-12 d-none d-xl-block">
-                                <hr>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                {% else %}
+                    </div>
+                {% endfor %}
+            {% else %}
                 <div class="col-3">
                     <p class="lead mb-5">Your bag is empty.</p>
                     <a href="{% url 'products' %}" class="btn btn-color-base rounded-3 btn-lg">
@@ -109,7 +88,6 @@
                     </a>
                 </div>
             {% endif %}
-            </div>
         </div>
     </div>
 {% endblock %}
