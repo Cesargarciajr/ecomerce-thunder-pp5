@@ -127,8 +127,6 @@
         </div>
     </header>
 
-    {% block footer%}
-    {% endblock %}
     <!-- Container to display validation messages to user -->
     {% if messages %}
     <div class="message-container">
@@ -156,7 +154,18 @@
     <!-- to add content in the pages -->
     {% block content %}
     {% endblock %}
-
+    <footer class="py-3 my-4 bg-dark bg-gradient">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3 text-white">
+            <li class="nav-item"><a href="{% url 'home' %}" class="nav-link px-2 text-white">Home</a></li>
+            <li class="nav-item"><a href="{% url 'products' %}" class="nav-link px-2 text-white">Shop Now</a></li>
+        </ul>
+        <p class="text-center text-white">© 2024 Developed by 
+            <a href="https://github.com/Cesargarciajr" target="_blank" class="text-decoration-none text-white">Cesar Garcia</a>
+            as final project for 
+            <a href="https://codeinstitute.net/ie/" target="_blank" class="text-decoration-none text-white">Code Institute</a>
+        </p>
+        
+    </footer>
     <!-- to add js files to be loaded at the end of other pages if needed-->
     {% block postloadjs %}
     <script type="text/javascript">
