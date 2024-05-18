@@ -333,3 +333,18 @@ body {
         padding: .25rem .5rem !important;
     }
 }
+
+/* Newsletter MailChimp */
+#mc_embed_signup{
+    color: white;
+    clear:left; 
+    font:14px Helvetica,Arial,sans-serif; 
+    width: 600px;
+}
+
+/* footer */
+.footer-link:hover,
+.footer-link:active,
+.footer-link:focus {
+    color: #f16034 !important;
+}
