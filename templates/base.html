@@ -1,21 +1,17 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
-    {% block meta %}
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% endblock %}
 
     <!-- to add extra meta tags in other pages if needed-->
     {% block extra_meta %}
     {% endblock %}
 
-    {% block corecss %}
+    <!-- Core CSS -->
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'media/favicon-16x16.png'%}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <!-- Bootstrap CSS -->
@@ -27,30 +23,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- MailChimp -->
     <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-    {% endblock %}
 
     <!-- to add extra css files in other pages if needed-->
     {% block extra_css %}
     {% endblock %}
-
-    {% block corejs %}
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
-    <script src="https://js.stripe.com/v3/"></script>
-    {% endblock %}
-
-    <!-- to add extra js files in other pages if needed-->
-    {% block extra_js %}
-    {% endblock %}
-
-    <!-- to add another title in other pages if needed-->
-    <title>Thunder Nutrition {% block extra_title %}{% endblock%}</title>
 </head>
 
 <body>
@@ -147,7 +123,6 @@
     </div>
     {% endif %}
 
-
     <!-- to add titles below the main header in other pages if needed-->
     {% block page_header %}
     {% endblock %}
@@ -159,7 +134,7 @@
     <!-- footer -->
     <footer class="py-3 mt-5 bg-dark bg-gradient">
         <div class="container">
-            <ul class="nav justify-content-center border-bottom pb-3 mb-3 text-white">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3 text            -white">
                 <li class="nav-item"><a href="{% url 'home' %}" class="footer-link nav-link px-2 text-white">Home</a></li>
                 <li class="nav-item"><a href="{% url 'products' %}" class="footer-link nav-link px-2 text-white">Shop Now</a></li>
                 <li class="nav-item"><a href="{% url 'contact' %}" class="footer-link nav-link px-2 text-white">Contact Us</a></li>
@@ -218,7 +193,6 @@
             $('.toast').toast('show');
         });
     </script>
-    
     {% endblock %}
     <!-- Script for Mailchimp Newsletter -->
     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
