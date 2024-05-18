@@ -15,7 +15,7 @@
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col-12">
                 <hr>
                 <h2 class="logo-font mb-4"><i class="fa-solid fa-heart"></i> My Favourites</h2>
                 <hr>
@@ -78,7 +78,7 @@
                     </div>
                 {% endfor %}
             {% else %}
-                <div class="col-5">
+                <div class="col-lg-5 col-sm-12">
                     <p class="lead mb-5">There is no item added to your Favourites yet.</p>
                     <a href="{% url 'products' %}" class="btn btn-color-base rounded-3 btn-lg">
                         <span class="icon">
