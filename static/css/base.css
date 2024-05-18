@@ -82,7 +82,7 @@ body {
 
 .nav-item:hover,
 #specials-link:hover,
-#user-options:hover,
+.user-options:hover,
 #shop-cart:hover,
 #preworkout-link:hover,
 #protein-link:hover,
@@ -184,13 +184,13 @@ body {
     color: #f16034;
 }
 
-#search-input:hover {
+.search-input:hover {
     border: 2px solid #f16034;
 }
 
-#search-input:hover::placeholder,
-#search-input:focus::placeholder,
-#search-input:active::placeholder {
+.search-input:hover::placeholder,
+.search-input:focus::placeholder,
+.search-input:active::placeholder {
     color: #f16034;
 }
 
