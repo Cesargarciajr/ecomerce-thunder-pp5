@@ -19,7 +19,7 @@ def add_to_favourites(request, product_id):
     user = request.user
 
     if myFavourites.objects.filter(product=product, user=user).exists():
-        messages.warning(request, 'This product is already in your favourites!')
+        messages.info(request, 'This product is already in your favourites!')
     else:
         favourite_product = myFavourites.objects.create(product=product, user=user)
         messages.success(request, f'Added {product.name} to your favourites!')
@@ -38,6 +38,6 @@ def remove_from_favourites(request, product_id):
         favourite_item.delete()
         messages.success(request, f'Removed {product.name} from your favourites!')
     else:
-        messages.warning(request, 'This product is not in your favourites!')
+        messages.info(request, 'This product is not in your favourites!')
 
     return redirect(reverse('view_my_favourites'))
