@@ -95,7 +95,7 @@ TEMPLATES = [
 ]
 
 # Django-Allauth backends needed settings
-CSRF_TRUSTED_ORIGINS = ['https://8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu111.gitpod.io',
+CSRF_TRUSTED_ORIGINS = ['https://8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu114.gitpod.io',
                         'https://8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu112.gitpod.io'] # Required by Django 4 update https://docs.djangoproject.com/en/dev/releases/4.0/#format-change
 
 # Toasts Messages storage
