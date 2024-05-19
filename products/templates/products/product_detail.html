@@ -116,48 +116,45 @@
                         {{ avg_rate }}/5
                     {% endif %}
                 </h5>
-                        {% if reviews %}
-                        {% for review in reviews %}
-                            <div class="card-review p-3 mt-3" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; border-radius: 10px;">
-                                <h6 class="mb-0">{{ review.user.username }}</h6>
-                                <span>
-                                    {% for star in review.stars|to_range %}
-                                            <i class="fa-solid fa-star mt-3" style="color: #FFD43B;"></i>
-                                    {% endfor %}
-                                </span>
-                                <p>{{ review.comment }}</p>
-                            </div>
-                            <br>
-                        {% endfor %}
-                    {% else %}
-                        <p>No reviews yet</p>
-                    {% endif %}
-                        <hr class="mt-3">{% if user.is_authenticated %}
-                        <form action="{% url 'product_detail' product.id %}" method="POST">
-                            {% csrf_token %}
-                            <div class="form-row">
-                                <div class="col-12">
-                                    <h5>Your feedback is important to us!</h5>
-                                    <p class="m-0">How many stars?</p>
-                                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                                    <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-                                    <input class="form-control rounded-2 w-25" name="rate" type="number" max="5" min="0" value="1" required>
-                                    <p class="mt-3"><strong>Write your Review: </strong></p>
-                                    <div class="form-group col-12">
-                                        <div class="input-group col-12">
-                                            <textarea class="form-control col-12" name="comment" id="comment" rows="6" placeholder="Please write your review here..."></textarea>
-                                        </div>
+                {% if reviews %}
+                    {% for review in reviews %}
+                        <div class="card-review p-3 mt-3" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; border-radius: 10px;">
+                            <h6 class="mb-0">{{ review.user.username }}</h6>
+                            <span>
+                                {% for star in review.stars|to_range %}
+                                        <i class="fa-solid fa-star mt-3" style="color: #FFD43B;"></i>
+                                {% endfor %}
+                            </span>
+                            <p>{{ review.comment }}</p>
+                        </div>
+                        <br>
+                    {% endfor %}
+                {% else %}
+                    <p>No reviews yet</p>
+                {% endif %}
+                    <hr class="mt-3">{% if user.is_authenticated %}
+                    <form action="{% url 'product_detail' product.id %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="col-12">
+                                <h5>Your feedback is important to us!</h5>
+                                <p class="m-0">How many stars?</p>
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                                <input class="form-control rounded-2 w-25" name="rate" type="number" max="5" min="0" value="1" required>
+                                <p class="mt-3"><strong>Write your Review: </strong></p>
+                                <div class="form-group col-12">
+                                    <div class="input-group col-12">
+                                        <textarea class="form-control col-12" name="comment" id="comment" rows="6" placeholder="Please write your review here..."></textarea>
                                     </div>
-                                    <input type="submit" value="Submit" class="btn btn-color-base rounded-3 mt-2">
                                 </div>
+                                <input type="submit" value="Submit" class="btn btn-color-base rounded-3 mt-2">
                             </div>
-                        </form>
-                    {% endif %}
-                    </div>
-                </div>
+                        </div>
+                    </form>
             </div>
         </div>
     </div>
