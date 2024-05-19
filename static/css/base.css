@@ -339,7 +339,8 @@ body {
     color: white;
     clear:left; 
     font:14px Helvetica,Arial,sans-serif; 
-    width: px;}
+    width: 100%;
+}
 
 /* footer */
 .footer-link:hover,
