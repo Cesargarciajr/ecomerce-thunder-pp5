@@ -73,24 +73,17 @@
                                         </button>
                                     </div>
                                 </div>
+                                <button type="submit" class="btn rounded-3 btn-shopping-cart text-uppercase mt-5">
+                                <i class="fas fa-shopping-cart"></i> Add to cart
+                                </button>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             </div>
                         </div>
                     </div>
                 </form>
                 <div class="col-12">
-                    <a href="{% url 'products' %}" class="btn btn-shopping-cart rounded-3 mt-5 btn-color-base">
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span class="text-uppercase">Keep Shopping</span>
-                    </a>
-                    <button type="submit" class="btn rounded-3 btn-shopping-cart text-uppercase mt-5">
-                        <i class="fas fa-shopping-cart"></i> Add to cart
-                    </button>
-                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                    </form>
                     <div class="col">
-                        <form class="form" action="" method="POST">
+                        <form class="form" action="{% url 'add_to_favourites' product_id=product.id %}" method="POST">
                             {% csrf_token %}
                             <div class="form-row mt-3">
                                 <div class="">
@@ -101,6 +94,12 @@
                             </div>
                         </form>
                     </div>
+                    <a href="{% url 'products' %}" class="btn btn-shopping-cart rounded-3 mt-2 btn-color-base">
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="text-uppercase">Keep Shopping</span>
+                    </a>
                 </div>
             </div>
             <hr>
