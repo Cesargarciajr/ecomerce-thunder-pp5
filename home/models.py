@@ -6,3 +6,4 @@ class contactMessage(models.Model):
     email = models.EmailField(null=False, blank=False)
     phone = models.CharField(null=False, blank=False)
     message = models.CharField(max_length=300, null=False, blank=False)
+    created_at = models.DateTimeField(auto_now_add=True)
