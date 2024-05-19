@@ -17,19 +17,19 @@
         <form method="GET" action="{% url 'products' %}" class="px-3 py-2">
             <div class="input-group">
                 <span class="input-group-text"><i class="fas fa-search"></i></span>
-                <input type="text" id="search-input" class="form-control" placeholder="Search" name="search">
+                <input type="text" id="search-input-mobile" class="form-control search-input" placeholder="Search" name="search">
             </div>
         </form>
     </div>
 </div>
 <div class="d-inline me-3">
-    <a class="nav-link text-white d-block d-lg-none" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a class="nav-link text-white d-block d-lg-none user-options" href="#" id="user-options-mobile" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
             <div><i class="fas fa-user"></i></div>
             <span class="d-lg-block">My Account</span>
         </div>
     </a>
-    <div class="dropdown-menu border-0" aria-labelledby="user-options">
+    <div class="dropdown-menu border-0 user-options" aria-labelledby="user-options-mobile">
         {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
                 <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
