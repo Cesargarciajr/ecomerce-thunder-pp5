@@ -61,7 +61,7 @@
                                         </button>
                                     </div>
                                     <input class="form-control qty_input" type="number"
-                                        name="quantity" value="1" min="1" max="99"
+                                        name="quantity" value="1"
                                         data-item_id="{{ product.id }}"
                                         id="id_qty_{{ product.id }}">
                                     <div class="input-group-append">
@@ -87,7 +87,7 @@
                             {% csrf_token %}
                             <div class="form-row mt-3">
                                 <div class="">
-                                    <input class="form-control qty_input" type="hidden" name="quantity" value="1" min="1" max="99" data-item_id="{{ item.product.id }}" id="id_qty_{{ item.product.id }}">
+                                    <input class="form-control qty_input" type="hidden" name="quantity" value="1" data-item_id="{{ item.product.id }}" id="id_qty_{{ item.product.id }}">
                                     <button type="submit" class="btn rounded-3 btn-shopping-cart text-uppercase"><i class="fas fa-heart"></i> Add to Favourites</button>
                                 </div>
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -167,4 +167,19 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_script.html' %}
+<script>
+    // Example JavaScript code to ensure the value falls within a specific range
+    var quantityInput = document.querySelector('.qty_input');
+    var quantity = 1; // For example, retrieve or calculate the quantity value dynamically
+    
+    // Ensure quantity falls within the specified range
+    if (quantity < 1) {
+        quantity = 1;
+    } else if (quantity > 99) {
+        quantity = 99;
+    }
+
+    // Set the value of the hidden input
+    quantityInput.value = quantity;
+</script>
 {% endblock %}
