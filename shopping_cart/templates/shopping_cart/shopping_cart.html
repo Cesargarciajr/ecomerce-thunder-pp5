@@ -111,9 +111,9 @@
                 </table>
             </div>
             {% else %}
-            <div class="col-3">
-                <p class="lead mb-5">Your cart is empty.</p>
-                <a href="{% url 'products' %}" class="btn btn-color-base rounded-3 btn-lg">
+            <div class="col-sm-12 col-lg-3">
+                <p class="lead ">Your cart is empty.</p>
+                <a href="{% url 'products' %}" class="btn btn-color-base rounded-3 btn">
                     <span class="icon">
                         <i class="fas fa-chevron-left"></i>
                     </span>
@@ -128,14 +128,14 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
+<script>
     $('.btt-link').click(function (e) {
         window.scrollTo(0, 0)
     })
 </script>
 {% include 'products/includes/quantity_script.html' %}
 
-<script type="text/javascript">
+<script>
     // Update quantity on click
     $('.update-link').click(function (e) {
         var form = $(this).prev('.update-form');
