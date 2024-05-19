@@ -132,7 +132,8 @@
                 {% else %}
                     <p>No reviews yet</p>
                 {% endif %}
-                    <hr class="mt-3">{% if user.is_authenticated %}
+                <hr class="mt-3">
+                {% if user.is_authenticated %}
                     <form action="{% url 'product_detail' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
@@ -155,6 +156,7 @@
                             </div>
                         </div>
                     </form>
+                {% endif %}
             </div>
         </div>
     </div>
