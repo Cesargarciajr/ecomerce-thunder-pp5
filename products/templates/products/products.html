@@ -92,8 +92,8 @@
                                             <form class="form" action="{% url 'add_to_shopping_cart' product.id %}" method="POST">
                                                 {% csrf_token %}
                                                 <div class="form-row mt-3">
-                                                    <div class="">
-                                                        <input class="form-control qty_input" type="hidden" name="quantity" value="1" min=1 max=99 data-item_id="{{ item.product.id }}">
+                                                    <div>
+                                                        <input class="form-control qty_input" type="hidden" name="quantity" value="1" data-item_id="{{ item.product.id }}">
                                                         <button type="submit" class="btn rounded-3 btn-shopping-cart text-uppercase">
                                                             <i class="fas fa-shopping-cart"></i> Add to cart
                                                         </button>
@@ -106,8 +106,8 @@
                                             <form class="form" action="{% url 'add_to_favourites' product_id=product.id %}" method="POST">
                                                 {% csrf_token %}
                                                 <div class="form-row mt-3">
-                                                    <div class="">
-                                                        <input class="form-control qty_input" type="hidden" name="favourites" value="1" min=1 max=99 data-item_id="{{ item.product.id }}">
+                                                    <div>
+                                                        <input class="form-control qty_input" type="hidden" name="quantity" value="1" data-item_id="{{ item.product.id }}">
                                                         <button type="submit" class="btn rounded-3 btn-shopping-cart text-uppercase"><i class="fas fa-heart"></i> Add Favourites</button>
                                                     </div>
                                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -184,5 +184,21 @@
             window.location.replace(currentUrl);
         }
     })
+</script>
+
+<script>
+    // Example JavaScript code to ensure the value falls within a specific range
+    var quantityInput = document.querySelector('.qty_input');
+    var quantity = 1; // For example, retrieve or calculate the quantity value dynamically
+    
+    // Ensure quantity falls within the specified range
+    if (quantity < 1) {
+        quantity = 1;
+    } else if (quantity > 99) {
+        quantity = 99;
+    }
+
+    // Set the value of the hidden input
+    quantityInput.value = quantity;
 </script>
 {% endblock %}
