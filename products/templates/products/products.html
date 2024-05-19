@@ -62,9 +62,9 @@
             <div class="row">
                 {% for product in products %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                    <div class="card h-100 border-0" id="product-card">
+                    <div class="card h-100 border-0 product-card">
                         <a href="{% url 'product_detail' product.id %}">
-                            <img class="card-img-top img-fluid p-3" id="product-img" src="{{ product.image_url }}"
+                            <img class="card-img-top img-fluid p-3 product-img" src="{{ product.image_url }}"
                                 alt="{{ product.name }}">
                         </a>
                         <div class="card-body pb-0">
@@ -93,7 +93,7 @@
                                                 {% csrf_token %}
                                                 <div class="form-row mt-3">
                                                     <div class="">
-                                                        <input class="form-control qty_input" type="hidden" name="quantity" value="1" min="1" max="99" data-item_id="{{ item.product.id }}" id="id_qty_{{ item.product.id }}">
+                                                        <input class="form-control qty_input" type="hidden" name="quantity" value="1" min=1 max=99 data-item_id="{{ item.product.id }}">
                                                         <button type="submit" class="btn rounded-3 btn-shopping-cart text-uppercase">
                                                             <i class="fas fa-shopping-cart"></i> Add to cart
                                                         </button>
@@ -107,7 +107,7 @@
                                                 {% csrf_token %}
                                                 <div class="form-row mt-3">
                                                     <div class="">
-                                                        <input class="form-control qty_input" type="hidden" name="favourites" value="1" min="1" max="99" data-item_id="{{ item.product.id }}" id="id_qty_{{ item.product.id }}">
+                                                        <input class="form-control qty_input" type="hidden" name="favourites" value="1" min=1 max=99 data-item_id="{{ item.product.id }}">
                                                         <button type="submit" class="btn rounded-3 btn-shopping-cart text-uppercase"><i class="fas fa-heart"></i> Add Favourites</button>
                                                     </div>
                                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
