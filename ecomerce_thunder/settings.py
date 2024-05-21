@@ -24,14 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY','')
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu111.gitpod.io', '8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu114.gitpod.io',
-                'thunder-nutrition-6bac86cc4153.herokuapp.com',
-                ]
+ALLOWED_HOSTS = ['8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu111.gitpod.io', '8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu114.gitpod.io', 'thunder-nutrition-6bac86cc4153.herokuapp.com', ]
 
 
 # Application definition
@@ -66,7 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'allauth.account.middleware.AccountMiddleware', # required by allauth
+    'allauth.account.middleware.AccountMiddleware',  # required by allauth
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -78,7 +76,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates'), # wiring up root template directory and custom allauth templates directory
+            os.path.join(BASE_DIR, 'templates'),  # wiring up root template directory and custom allauth templates directory
             os.path.join(BASE_DIR, 'templates', 'allauth'),
         ],
         'APP_DIRS': True,
@@ -86,18 +84,18 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth', # required by allauth
+                'django.contrib.auth.context_processors.auth',  # required by allauth
                 'django.contrib.messages.context_processors.messages',
-                'shopping_cart.contexts.shopping_cart_contents', # content processor for shopping cart content
+                'shopping_cart.contexts.shopping_cart_contents',  # content processor for shopping cart content
             ],
         },
     },
 ]
 
 # Django-Allauth backends needed settings
-CSRF_TRUSTED_ORIGINS = ['https://8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu111.gitpod.io', 
+CSRF_TRUSTED_ORIGINS = ['https://8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu111.gitpod.io',
                         'https://8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu114.gitpod.io',
-                        'https://8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu112.gitpod.io'] # Required by Django 4 update https://docs.djangoproject.com/en/dev/releases/4.0/#format-change
+                        'https://8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu112.gitpod.io']  # Required by Django 4 update https://docs.djangoproject.com/en/dev/releases/4.0/#format-change
 
 # Toasts Messages storage
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
@@ -105,10 +103,8 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 
 AUTHENTICATION_BACKENDS = [
-    
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
-
     # `allauth` specific authentication methods, such as login by email
     'allauth.account.auth_backends.AuthenticationBackend',
 ]

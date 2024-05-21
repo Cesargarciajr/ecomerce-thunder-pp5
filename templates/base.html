@@ -54,7 +54,7 @@
         <div id="topnav" class="row pt-lg-2 d-none d-lg-flex align-item-center justify-content-center bg-dark bg-gradient">
             <!-- Logo -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                <a href="{% url 'home' %}" id="thunder-logo" class="nav-link main-logo-link">
+                <a href="{% url 'home' %}" id="thunder-logo" class="nav-link main-logo-link" rel="Home">
                     <h2 class="logo-font my-0"><strong>Thunder</strong> Nutrition <i class="fa-solid fa-bolt"></i></h2>
                 </a>
             </div>
@@ -71,7 +71,7 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0 pt-4 px-3 d-flex justify-content-end">
                     <li class="list-inline-item dropdown">
-                        <a class="text-white nav-link dropdown-toggle user-options" href="#" id="user-options" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="text-white nav-link dropdown-toggle user-options" href="#" id="user-options" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" rel="my-account">
                             <div class="text-center">
                                 <div><i class="fa fa-user" style="color: #ffffff;"></i></div>
                                 <p class="my-0 text-white">My Account</p>
@@ -80,20 +80,20 @@
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                                    <a href="{% url 'add_product' %}" class="dropdown-item" rel="product-management">Product Management</a>
                                 {% endif %}
-                                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'view_my_favourites' %}" class="dropdown-item">My Favourites</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                <a href="{% url 'profile' %}" class="dropdown-item" rel="my-profile">My Profile</a>
+                                <a href="{% url 'view_my_favourites' %}" class="dropdown-item" rel="my-favourites">My Favourites</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item" rel="logout">Logout</a>
                             {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                <a href="{% url 'account_signup' %}" class="dropdown-item" rel="signup">Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item" rel="login">Login</a>
                             {% endif %}
                         </div>
                     </li>
                     <!-- Shopping Cart Icon -->
                     <li class="list-inline-item mx-4">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link link-unstyled" href="{% url 'view_shopping_cart' %}" id="shop-cart">
+                        <a class="{% if grand_total %}font-weight-bold{% else %}text-white{% endif %} nav-link text-decoration-none text-decoration-none text-white" href="{% url 'view_shopping_cart' %}" id="shop-cart" rel="shopping-cart">
                             <div class="text-center">
                                 <div><i class="fa fa-cart-shopping" style="color: #ffffff;"></i></div>
                                 <p class="my-0">
@@ -151,9 +151,9 @@
     <footer class="py-3 mt-5 bg-dark bg-gradient footer">
         <div class="container">
             <ul class="nav justify-content-center border-bottom pb-3 mb-3 text            -white">
-                <li class="nav-item"><a href="/" class="footer-link nav-link px-2 text-white">Home</a></li>
-                <li class="nav-item"><a href="/products/" class="footer-link nav-link px-2 text-white">Shop Now</a></li>
-                <li class="nav-item"><a href="/contact/" class="footer-link nav-link px-2 text-white">Contact Us</a></li>
+                <li class="nav-item"><a href="/" class="footer-link nav-link px-2 text-white" rel="home">Home</a></li>
+                <li class="nav-item"><a href="/products/" class="footer-link nav-link px-2 text-white" rel="products">Shop Now</a></li>
+                <li class="nav-item"><a href="/contact/" class="footer-link nav-link px-2 text-white" rel="contact">Contact Us</a></li>
             </ul>
             <!-- Newsletter  -->
             <div class="row">
@@ -189,12 +189,12 @@
                 </div>          
                 <div class="col-lg-5 col-md-12">
                     <p class="text-center pt-lg-5 pt-md-0">
-                        <a href="https://www.termsfeed.com/live/55aa67b4-f54f-4391-b130-210733abe96d" target="_blank" class="footer-link text-center text-decoration-none text-white">Terms and Conditions</a>
+                        <a href="https://www.termsfeed.com/live/55aa67b4-f54f-4391-b130-210733abe96d" target="_blank" class="footer-link text-center text-decoration-none text-white" rel="terms-and-conditions">Terms and Conditions</a>
                     </p>
                     <p class="text-center text-white">© 2024 Developed by 
-                        <a href="https://github.com/Cesargarciajr" target="_blank" class="footer-link text-decoration-none text-white"><strong>Cesar Garcia</strong></a>
+                        <a href="https://github.com/Cesargarciajr" target="_blank" class="footer-link text-decoration-none text-white" rel="github"><strong>Cesar Garcia</strong></a>
                         as final project for 
-                        <a href="https://codeinstitute.net/ie/" target="_blank" class="footer-link text-decoration-none text-white"><strong>Code Institute</strong></a>
+                        <a href="https://codeinstitute.net/ie/" target="_blank" class="footer-link text-decoration-none text-white" rel="code-institute"><strong>Code Institute</strong></a>
                     </p>
                 </div>
             </div> 

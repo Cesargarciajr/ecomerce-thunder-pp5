@@ -17,7 +17,7 @@ class ProductForm(forms.ModelForm):
         friendly_names = [(c.id, c.get_display_name()) for c in categories]
 
         self.fields['category'].choices = friendly_names
-    
+
     def clean_price(self):
         price = self.cleaned_data.get('price')
         if price is not None and price < 0:

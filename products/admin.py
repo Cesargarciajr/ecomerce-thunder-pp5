@@ -3,6 +3,7 @@ from .models import Product, Category, Review
 
 # Register your models here.
 
+
 class ProductAdmin(admin.ModelAdmin):
     """
     Product class to django admin
@@ -15,7 +16,8 @@ class ProductAdmin(admin.ModelAdmin):
         'image',
     )
 
-    ordering = ('name',) # determining ordering to be displayed in the list
+    ordering = ('name',)  # determining ordering to be displayed in the list
+
 
 class CategoryAdmin(admin.ModelAdmin):
     """
@@ -25,6 +27,7 @@ class CategoryAdmin(admin.ModelAdmin):
             'display_name',
             'name',
     )
+
 
 class ReviewAdmin(admin.ModelAdmin):
     """

@@ -16,5 +16,6 @@ class ContactAdmin(admin.ModelAdmin):
     )
     ordering = ['-created_at']
 
+
 # Register your models here.
 admin.site.register(contactMessage, ContactAdmin)

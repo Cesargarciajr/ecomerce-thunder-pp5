@@ -67,18 +67,18 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     reviews = Review.objects.filter(product=product)
 
-    # Calculating avarage stars 
+    # Calculating avarage stars
     avg_rate = reviews.aggregate(average_stars=Avg('stars'))['average_stars']
-    avg_rate =round(avg_rate,1) if avg_rate is not None else 0
+    avg_rate = round(avg_rate, 1) if avg_rate is not None else 0
     round_avg = math.ceil(avg_rate) if avg_rate is not None else 0
 
     # Summing total of reviews
     total_reviews = reviews.count()
-    
+
     if request.method == "POST":
         comment = request.POST.get("comment")
         rate = request.POST.get("rate")
-        
+
         # Create and save comment review
         review = Review.objects.create(
             product=product,
@@ -91,15 +91,14 @@ def product_detail(request, product_id):
         return redirect('product_detail', product_id=product.id)
     
     context = {
-        'product': product, 
-        'reviews': reviews, 
-        'avg_rate' : avg_rate, 
+        'product': product,
+        'reviews': reviews,
+        'avg_rate' : avg_rate,
         'round_avg' : round_avg,
         'total_reviews': total_reviews,
     }
 
     return render(request, 'products/product_detail.html', context)
-
 
 
 @login_required

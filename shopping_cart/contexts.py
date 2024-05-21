@@ -3,7 +3,8 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
 
-# Context processor to make this dictionary available through the entire application which added in the settings.py context processor array
+# Context processor to make this dictionary available through the entire
+# application which added in the settings.py context processor array
 
 
 def shopping_cart_contents(request):
@@ -29,9 +30,9 @@ def shopping_cart_contents(request):
     else:
         delivery = 0
         free_delivery_delta = 0
-    
+
     grand_total = delivery + total
-    
+
     context = {
         'shopping_cart_items': shopping_cart_items,
         'total': total,

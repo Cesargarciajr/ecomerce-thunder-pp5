@@ -12,6 +12,7 @@ def view_my_favourites(request):
     my_favourite_items = myFavourites.objects.filter(user=request.user)
     return render(request, 'my_favourites/my_favourites.html', {'myFavourites': my_favourite_items})
 
+
 @login_required
 def add_to_favourites(request, product_id):
     """ A view to add product to my favourites """
@@ -23,7 +24,7 @@ def add_to_favourites(request, product_id):
     else:
         favourite_product = myFavourites.objects.create(product=product, user=user)
         messages.success(request, f'Added {product.name} to your favourites!')
-    
+
     return redirect(reverse('products'))
 
 

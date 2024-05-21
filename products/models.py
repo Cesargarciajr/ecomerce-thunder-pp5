@@ -4,10 +4,11 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+
 class Category(models.Model):
-    
+
     class Meta:
-        verbose_name_plural = 'Categories' # Fixing how 'Categories' will be displayed on Django Admin
+        verbose_name_plural = 'Categories'  # Fixing how 'Categories' will be displayed on Django Admin
 
     name = models.CharField(max_length=254)
     display_name = models.CharField(max_length=254, null=True, blank=True)
@@ -17,6 +18,7 @@ class Category(models.Model):
 
     def get_display_name(self):
         return self.display_name
+
 
 class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)

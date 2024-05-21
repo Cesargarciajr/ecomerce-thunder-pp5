@@ -1,5 +1,5 @@
 <div class="d-inline me-3">
-    <a href="{% url 'home' %}" class="nav-link text-white d-block d-lg-none">
+    <a href="{% url 'home' %}" class="nav-link text-white d-block d-lg-none" rel="home">
         <div class="text-center">
             <div><i class="fas fa-home"></i></div>
             <span class="d-lg-block">Home</span>
@@ -7,7 +7,7 @@
     </a>
 </div>
 <div class="d-inline me-3">
-    <a class="nav-link text-white d-block d-lg-none" href="#" id="mobile-search" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a class="nav-link text-white d-block d-lg-none" href="#" id="mobile-search" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" rel="search-bar">
         <div class="text-center">
             <div><i class="fas fa-search fa-lg"></i></div>
             <span class="d-lg-block">Search</span>
@@ -23,7 +23,7 @@
     </div>
 </div>
 <div class="d-inline me-3">
-    <a class="nav-link text-white d-block d-lg-none user-options" href="#" id="user-options-mobile" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a class="nav-link text-white d-block d-lg-none user-options" href="#" id="user-options-mobile" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" rel="my-account">
         <div class="text-center">
             <div><i class="fas fa-user"></i></div>
             <span class="d-lg-block">My Account</span>
@@ -32,13 +32,13 @@
     <div class="dropdown-menu border-0 user-options" aria-labelledby="user-options-mobile">
         {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
-                <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                <a href="{% url 'add_product' %}" class="dropdown-item" rel="product-management">Product Management</a>
             {% endif %}
-            <a href="#" class="dropdown-item">My Profile</a>
-            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+            <a href="#" class="dropdown-item" rel="my-profile">My Profile</a>
+            <a href="{% url 'account_logout' %}" class="dropdown-item" rel="logout">Logout</a>
         {% else %}
-            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+            <a href="{% url 'account_signup' %}" class="dropdown-item" rel="signup">Register</a>
+            <a href="{% url 'account_login' %}" class="dropdown-item" rel="login">Login</a>
         {% endif %}
     </div>
 </div>

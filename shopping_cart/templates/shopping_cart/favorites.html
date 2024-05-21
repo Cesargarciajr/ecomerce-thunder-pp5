@@ -62,7 +62,7 @@
                 {% endfor %}
                 <!--Back to the top button -->
                 <div class="btt-button shadow-sm rounded-3" id="btt-button">
-                    <a class="btt-link d-flex h-100 link-underline link-underline-opacity-0" id="btt-link">
+                    <a class="btt-link d-flex h-100 link-underline link-underline-opacity-0" id="btt-link" rel="back-to-top">
                         <i class="fas fa-arrow-up mx-auto my-auto"></i>
                     </a>
                 </div>
@@ -112,7 +112,7 @@
             </div>
             {% else %}
             <p class="lead mb-5">Your bag is empty.</p>
-            <a href="{% url 'products' %}" class="btn btn-color-base rounded-3 btn-lg">
+            <a href="{% url 'products' %}" class="btn btn-color-base rounded-3 btn-lg" rel="products">
                 <span class="icon">
                     <i class="fas fa-chevron-left"></i>
                 </span>
