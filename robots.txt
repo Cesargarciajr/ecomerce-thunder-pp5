@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://thunder-nutrition-6bac86cc4153.herokuapp.com/sitemap.xml
