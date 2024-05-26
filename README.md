@@ -8,6 +8,7 @@ Introducing Thunder Nutrition an e-commerce platform is the culmination of my jo
 
 ![Alt text](static/media/gif.gif "Hero gif for Readme File")
 
+
 # Contents
 
 - [Contents](#contents)
@@ -179,18 +180,21 @@ For future features I will definetly implement a favorites page where user could
 
 <details>
   <summary>HTML Checkers</summary>
-    - [**Home**](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2F)
-    - [**Products**](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fproducts%2F)
-    - [**Products Details**](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fproducts%2F4%2F)
-    - [**Product Edit**](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fproducts%2Fedit%2F26%2F)
-    - [**Product Add**](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fproducts%2Fadd%2F)
-    - [**Profiles**](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fprofiles%2F)
-    - [**My Favourites**](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fmy_favourites%2Fview_my_favourites%2F)
-    - [**Shopping Cart**](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fshopping_cart%2F)
-    - [**Checkout**](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fcheckout%2F)
-    - [**Checkout Success**](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fcheckout%2Fcheckout_success%2FFEC00E06291F4C069F99A1A1C5796C18)
-    - [**Contact**](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fcontact%2F)
+  
+  - <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2F" target="_blank">**Home**</a> 
+  - <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fproducts%2F" target="_blank">**Products**</a> - The error displayed is related to "back to top" buttton that does not have a href, but it doesnt need to.
+  - <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fproducts%2F4%2F" target="_blank">**Products Details**</a> 
+  - <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fproducts%2Fedit%2F26%2F" target="_blank">**Product Edit**</a> - The error displayed is related to "trailing slash" of an element the is automatically generated from Django Forms.
+  - <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fproducts%2Fadd%2F" target="_blank">**Product Add**</a> - The error displayed is related to "trailing slash" of an element the is automatically generated from Django Forms.
+  - <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fprofiles%2F" target="_blank">**Profiles**</a> - The error displayed is related to "trailing slash" of an element the is automatically generated from Django Forms.
+  - <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fmy_favourites%2Fview_my_favourites%2F" target="_blank">**My Favourites**</a>  - The error displayed is related to "trailing slash" of an element the is automatically generated from Django Forms.
+  - <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fshopping_cart%2F" target="_blank">**Shopping Cart**</a>
+  - <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fcheckout%2F" target="_blank">**Checkout**</a> - The error displayed is related to "back to top" buttton that does not have a href, but it doesnt need to.
+  - <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fcheckout%2Fcheckout_success%2FFEC00E06291F4C069F99A1A1C5796C18" target="_blank">**Checkout Success**</a>
+  - <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fcontact%2F" target="_blank">**Contact**</a>
 </details>
+
+
 
 - All HTML files were passed through the W3C validator with no errors
 - All JavaScript files were passed through JSHint with no errors present.
