@@ -13,6 +13,7 @@ import os
 if os.path.exists('env.py'):
     import env
 
+import sys
 import dj_database_url
 from pathlib import Path
 
@@ -137,6 +138,10 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
+
+
+if 'test' in sys.argv:
+    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
 
 
 # Password validation

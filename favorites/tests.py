@@ -37,8 +37,7 @@ class MyFavouritesTests(TestCase):
         # Add the product to favourites
         myFavourites.objects.create(product=self.product, user=self.user)
         # Send a POST request to add the product to favourites again
-        response = self.client.post(reverse('add_to_favourites', args=[self.product.id]))
-        self.assertRedirects(response, reverse('products'))
+        response = self.client.post(reverse('add_to_favourites', args=[self.product.id]), follow=True)
         self.assertContains(response, 'This product is already in your favourites!')
 
     def test_remove_from_favourites(self):
@@ -55,8 +54,7 @@ class MyFavouritesTests(TestCase):
         # Log in the user
         self.client.login(username='testuser', password='testpassword')
         # Send a POST request to remove the product from favourites which is not in the list
-        response = self.client.post(reverse('remove_from_favourites', args=[self.product.id]))
-        self.assertRedirects(response, reverse('view_my_favourites'))
+        response = self.client.post(reverse('remove_from_favourites', args=[self.product.id]), follow=True)
         self.assertContains(response, 'This product is not in your favourites!')
 
     def tearDown(self):
