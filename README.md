@@ -6,7 +6,7 @@ Introducing Thunder Nutrition an e-commerce platform is the culmination of my jo
 
 [**Link to Thunder Nutrition App Live **](https://thunder-nutrition-6bac86cc4153.herokuapp.com/)
 
-![Alt text](static/media/hero_readme.png "Hero image for Readme File")
+![Alt text](static/media/gif.gif "Hero gif for Readme File")
 
 # Contents
 
@@ -176,6 +176,21 @@ For future features I will definetly implement a favorites page where user could
   | Different screen devices | Runned the app using a Samsung Galaxy s20 and Iphone 13 | App works responsive and layout remains intact no errors or bug detected |
 
 [Back to top](<#contents>)
+
+<details>
+  <summary>HTML Checkers</summary>
+    - [**Home**](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2F)
+    - [**Products**](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fproducts%2F)
+    - [**Products Details**](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fproducts%2F4%2F)
+    - [**Product Edit**](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fproducts%2Fedit%2F26%2F)
+    - [**Product Add**](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fproducts%2Fadd%2F)
+    - [**Profiles**](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fprofiles%2F)
+    - [**My Favourites**](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fmy_favourites%2Fview_my_favourites%2F)
+    - [**Shopping Cart**](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fshopping_cart%2F)
+    - [**Checkout**](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fcheckout%2F)
+    - [**Checkout Success**](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fcheckout%2Fcheckout_success%2FFEC00E06291F4C069F99A1A1C5796C18)
+    - [**Contact**](https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fcontact%2F)
+</details>
 
 - All HTML files were passed through the W3C validator with no errors
 - All JavaScript files were passed through JSHint with no errors present.
