@@ -31,4 +31,3 @@ urlpatterns = [
     path('profiles/', include('profiles.urls')),
     path('my_favourites/', include('favorites.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-handler404 = 'ecomerce_thunder.views.handler404'
