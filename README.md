@@ -193,15 +193,276 @@ For future features I will definetly implement a favorites page where user could
   - <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fcheckout%2Fcheckout_success%2FFEC00E06291F4C069F99A1A1C5796C18" target="_blank">**Checkout Success**</a>
   - <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fcontact%2F" target="_blank">**Contact**</a>
 </details>
-
-
-
-- All HTML files were passed through the W3C validator with no errors
-- All JavaScript files were passed through JSHint with no errors present.
-- The website was tested on major browsers including Chrome, Safari, Firefox and Edge.
-- All user flows were tested in depth including navigating through the purchase flow, clicking CTAs and links, and form submission.
-- All forms were tested to ensure validation was present and that forms could be submitted without error
-- Lighthouse was used to test for Performance, Accessibility, Best Practices and SEO and adjustments were made to improve test results.
+<details>
+  <summary>CSS Checkers</summary>
+  
+  - <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">**Home**</a> - The error displayed is related to FontAwesome cdn link. The other warnings are related to AWS, MailChimp and Bootstrap.
+  - <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fcheckout%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en" target="_blank">**Checkout**</a> - The error displayed is related to FontAwesome cdn link. The other warnings are related to AWS, MailChimp and Bootstrap.
+  - <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fthunder-nutrition-6bac86cc4153.herokuapp.com%2Fprofiles%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en" target="_blank">**Profiles**</a> - The error displayed is related to FontAwesome cdn link. The other warnings are related to AWS, MailChimp and Bootstrap.
+</details>
+<details>
+  <summary>JsHint Checkers</summary>
+  <ul>
+    <li>
+      <details>
+        <summary>Stripe_element.js</summary>
+        <img src="media/stripe_elements_jshint.png" alt="stripe_elements_jshint" title="stripe_elements_jshint">
+      </details>
+    </li>
+    <li>
+      <details>
+        <summary>Country Field</summary>
+        <img src="media/countryfield_jshint.png" alt="countryfield_jshint" title="countryfield_jshint">
+      </details>
+    </li>
+  </ul>
+</details>
+<details>
+  <summary>Python Linter Checkers</summary>
+  <ul>
+    <li>
+      <details>
+        <summary>Main App</summary>
+        <ul>
+          <li>
+            <details>
+              <summary>settings.py</summary>
+              <img src="media/settings_pylinter.png" alt="settings_pylinter" title="settings_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>urls.py</summary>
+              <img src="media/urls_pylinter.png" alt="urls_pylinter" title="urls_pylinter">
+            </details>
+          </li>
+        </ul>
+      </details>
+    </li>
+    <li>
+      <details>
+        <summary>Home App</summary>
+        <ul>
+          <li>
+            <details>
+              <summary>admin.py</summary>
+              <img src="media/home_admin_pylinter.png" alt="home_admin_pylinter" title="home_admin_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>forms.py</summary>
+              <img src="media/home_forms_pylinter.png" alt="home_forms_pylinter" title="home_forms_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>models.py</summary>
+              <img src="media/home_models_pylinter.png" alt="home_models_pylinter" title="home_models_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>urls.py</summary>
+              <img src="media/home_urls_pylinter.png" alt="home_urls_pylinter" title="home_urls_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>views.py</summary>
+              <img src="media/home_views_pylinter.png" alt="home_views_pylinter" title="home_views_pylinter">
+            </details>
+          </li>
+        </ul>
+      </details>
+    </li>
+    <li>
+      <details>
+        <summary>Products App</summary>
+        <ul>
+          <li>
+            <details>
+              <summary>admin.py</summary>
+              <img src="media/products_admin_pylinter.png" alt="products_admin_pylinter" title="products_admin_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>forms.py</summary>
+              <img src="media/products_forms_pylinter.png" alt="products_forms_pylinter" title="products_forms_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>models.py</summary>
+              <img src="media/products_models_pylinter.png" alt="products_models_pylinter" title="products_models_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>urls.py</summary>
+              <img src="media/products_urls_pylinter.png" alt="products_urls_pylinter" title="products_urls_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>views.py</summary>
+              <img src="media/products_views_pylinter.png" alt="products_views_pylinter" title="products_views_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>widgets.py</summary>
+              <img src="media/products_widgets_pylinter.png" alt="products_widgets_pylinter" title="products_widgets_pylinter">
+            </details>
+          </li>
+        </ul>
+      </details>
+    </li>
+    <li>
+      <details>
+        <summary>Shopping Cart App</summary>
+        <ul>
+          <li>
+            <details>
+              <summary>admin.py</summary>
+              <img src="media/shopping_context_pylinter.png" alt="shopping_cart_context_pylinter" title="shopping_cart_context_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>urls.py</summary>
+              <img src="media/shopping_urls_pylinter.png" alt="shopping_cart_urls_pylinter" title="shopping_cart_urls_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>views.py</summary>
+              <img src="media/shopping_views_pylinter.png" alt="shopping_cart_views_pylinter" title="shopping_cart_views_pylinter">
+            </details>
+          </li>
+        </ul>
+      </details>
+    </li>
+    <li>
+      <details>
+        <summary>Checkout App</summary>
+        <ul>
+          <li>
+            <details>
+              <summary>admin.py</summary>
+              <img src="media/checkout_admin_pylinter.png" alt="checkout_admin_pylinter" title="checkout_admin_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>forms.py</summary>
+              <img src="media/checkout_forms_pylinter.png" alt="checkout_forms_pylinter" title="checkout_forms_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>models.py</summary>
+              <img src="media/checkout_models_pylinter.png" alt="checkout_models_pylinter" title="checkout_models_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>signals.py</summary>
+              <img src="media/checkout_signals_pylinter.png" alt="checkout_signals_pylinter" title="checkout_signals_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>urls.py</summary>
+              <img src="media/checkout_urls_pylinter.png" alt="checkout_urls_pylinter" title="checkout_urls_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>views.py</summary>
+              <img src="media/checkout_views_pylinter.png" alt="checkout_views_pylinter" title="checkout_views_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>webhook_handler.py</summary>
+              <img src="media/checkout_webhook_handler_pylinter.png" alt="checkout_webhook_handler_pylinter" title="checkout_webhook_handler_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>webhooks.py</summary>
+              <img src="media/checkout_webhook_pylinter.png" alt="checkout_webhook_pylinter" title="checkout_webhook_pylinter">
+            </details>
+          </li>
+        </ul>
+      </details>
+    </li>
+    <li>
+      <details>
+        <summary>Profiles App</summary>
+        <ul>
+          <li>
+            <details>
+              <summary>forms.py</summary>
+              <img src="media/profiles_forms_pylinter.png" alt="profiles_forms_pylinter" title="profiles_forms_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>models.py</summary>
+              <img src="media/profiles_models_pylinter.png" alt="profiles_models_pylinter" title="profiles_models_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>urls.py</summary>
+              <img src="media/profiles_urls_pylinter.png" alt="profiles_urls_pylinter" title="profiles_urls_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>views.py</summary>
+              <img src="media/profiles_views_pylinter.png" alt="profiles_views_pylinter" title="profiles_views_pylinter">
+            </details>
+          </li>
+        </ul>
+      </details>
+    </li>
+    <li>
+      <details>
+        <summary>Favorites App</summary>
+        <ul>
+          <li>
+            <details>
+              <summary>admin.py</summary>
+              <img src="media/favorites_admin_pylinter.png" alt="favorites_admin_pylinter" title="favorites_admin_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>models.py</summary>
+              <img src="media/favorites_models_pylinter.png" alt="favorites_models_pylinter" title="favorites_models_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>urls.py</summary>
+              <img src="media/favorites_urls_pylinter.png" alt="favorites_urls_pylinter" title="favorites_urls_pylinter">
+            </details>
+          </li>
+          <li>
+            <details>
+              <summary>views.py</summary>
+              <img src="media/favorites_views_pylinter.png" alt="favorites_views_pylinter" title="favorites_views_pylinter">
+            </details>
+          </li>
+        </ul>
+      </details>
+    </li>
+  </ul>
+</details>
 
 [Back to top](<#contents>)
 
