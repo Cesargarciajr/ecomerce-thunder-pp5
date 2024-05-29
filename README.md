@@ -46,6 +46,23 @@ ___
 
 User stories were written and recorded using the Kanban and Issue tool from GitHub that can be found in [**here**](https://github.com/Cesargarciajr/ecomerce-thunder-pp5/issues)
 
+  ## Customer Stories:
+  
+  1. As a customer, I want to browse products by categories so that I can find items I'm interested in more easily.
+  2. As a customer, I want to search for products by keywords so that I can quickly locate specific items.
+  3. As a customer, I want to view detailed product information including descriptions, prices, images, and customer reviews so that I can make informed purchasing decisions.
+  4. As a customer, I want to add products to my shopping cart so that I can save them for later or proceed to checkout.
+  5. As a customer, I want to easily edit the quantity of items in my shopping cart before proceeding to checkout.
+  6. As a customer, I want to securely checkout and make payments using various payment methods (e.g., credit/debit card, PayPal) so that I can complete my purchase.
+  7. As a customer, I want to have a user account where I can manage my personal information and view order history.
+  8. As a customer, I want to receive email notifications about order confirmations and promotional offers.
+  
+  ## Administrator Stories:
+  
+  9. As an administrator, I want to add, edit, and remove products from the inventory so that I can keep the catalog up-to-date.
+  10. As an administrator, I want to manage product categories and attributes (e.g., sizes, colors) to organize the inventory effectively.
+  11. As an administrator, I want to analyze sales data and customer behavior to make informed decisions about marketing strategies and inventory management.
+  
   [Back to top](<#contents>)
   
    - ### Agile and Kanban
