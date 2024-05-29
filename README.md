@@ -27,6 +27,7 @@ Introducing Thunder Nutrition an e-commerce platform is the culmination of my jo
     - [Edit Products](#edit-products)
     - [Profile Page](#profile-page)
     - [Future Features](#future-features)
+  - [Marketing Strategies](#marketing-strategies)
   - [Testing](#testing)
     - [Bugs and Issues](#bugs-and-issues)
   - [Technologies Used](#technologies-used)
@@ -175,10 +176,40 @@ Here user is able to edit his delivery details as well as check order history
 
 [Back to top](<#contents>)
 
+  ### Custom 404 Page
+if there is an error user will be redirected to a custom 404 page.
+
+  ![Alt text](media/404.png "404 page")
+
+[Back to top](<#contents>)
+
+ ### Django Admin
+Django Admin is set to offer the administrator a variety of custom filters as well access to full CRUD operations over the models and data of the application
+
+  ![Alt text](media/admin.png "admin")
+
+[Back to top](<#contents>)
+
   ### Future Features
-For future features I will definetly implement a favorites page where user could add to favorites, also some sort of banners for advertisement to get sponsored ads on the website. 
+For future features I will definetly implement some sort of banners for advertisement to get sponsored ads on the website, and notification system for shipment tracking.
 
+[Back to top](<#contents>)
 
+## Marketing Strategies
+  
+  ### Meta Tags and Rel
+  ![Alt text](media/meta_tags.png "meta tags")
+    
+  ### SEO Mechanism
+  ![Alt text](media/robots.png "robots")
+  ![Alt text](media/sitemaps.png "site maps")
+  
+  ### Newsletter
+  ![Alt text](media/mailchimp.png "site maps")
+
+  ### Social Media - Facebook Page
+  ![Alt text](media/facebook.png "facebook")
+  
 [Back to top](<#contents>)
 
 ## Testing
@@ -502,6 +533,7 @@ I used the following technologies, platforms and support in building my project:
 - [**Heroku**](https://www.heroku.com/platform) - was used for application deployment.
 - [**Elephant SQL**](https://www.elephantsql.com/) - for database.
 - [**Lucid**](https://lucid.co/) - Flowchart used on readme file.
+- [**AWS**](https://aws.amazon.com/free/?gclid=CjwKCAjwgdayBhBQEiwAXhMxtnqHxD3RMyM7tpJ66CnNIstdfVIzbP8EUPCyaAduu77WZfn15T6njxoC4uYQAvD_BwE&trk=d5254134-67ca-4a35-91cc-77868c97eedd&sc_channel=ps&ef_id=CjwKCAjwgdayBhBQEiwAXhMxtnqHxD3RMyM7tpJ66CnNIstdfVIzbP8EUPCyaAduu77WZfn15T6njxoC4uYQAvD_BwE:G:s&s_kwcid=AL!4422!3!433803620858!e!!g!!aws!1680401428!67152600164&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all) - Used to store and host static files.
 
 [Back to top](<#contents>)
 
@@ -578,6 +610,7 @@ Open your terminal (or Git Bash on Windows) and navigate to the directory where 
   - [**W3 Schools**](https://www.w3schools.com/) - used for multiples researches and tutorials in HTML and CSS.
   - [**Stack Overflow**](https://stackoverflow.com) - used to clarify questions and collect answers.
   - [**Real Python**](https://realpython.com/python-pep8) - Also provide with clarity the solutions
+  - [**AWS**](https://aws.amazon.com/free/?gclid=CjwKCAjwgdayBhBQEiwAXhMxtnqHxD3RMyM7tpJ66CnNIstdfVIzbP8EUPCyaAduu77WZfn15T6njxoC4uYQAvD_BwE&trk=d5254134-67ca-4a35-91cc-77868c97eedd&sc_channel=ps&ef_id=CjwKCAjwgdayBhBQEiwAXhMxtnqHxD3RMyM7tpJ66CnNIstdfVIzbP8EUPCyaAduu77WZfn15T6njxoC4uYQAvD_BwE:G:s&s_kwcid=AL!4422!3!433803620858!e!!g!!aws!1680401428!67152600164&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all) - Used to store and host static files.
 
  
 [Back to top](<#contents>)
