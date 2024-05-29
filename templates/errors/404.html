@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <hr>
+                <h2 class="logo-font mb-4"><i class="fa-solid fa-envelope"></i> Contact us</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <p><i class="fa-solid fa-cloud-bolt"></i> The page you are looking for isn't available</p>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-lg-3 col-sm-12">
+                <a href="{% url 'products' %}" class="btn btn-color-base rounded-3">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="text-uppercase">Keep Shopping</span>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

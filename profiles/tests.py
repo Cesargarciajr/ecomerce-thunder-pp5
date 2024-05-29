@@ -52,13 +52,11 @@ class ProfilesAppTests(TestCase):
         # Check if profile data is displayed
         self.assertContains(response, '1234567890')  # Check if phone number is displayed
         self.assertContains(response, '123 Test St')  # Check if street address is displayed
-        # Add more assertions to check other fields as needed
 
         # Test profile update
         updated_data = {
             'default_phone_number': '9876543210',
             'default_street_address1': '456 Updated St',
-            # Add more updated fields as needed
         }
         response = self.client.post(reverse('profile'), updated_data)
         self.assertEqual(response.status_code, 302)  # Check if redirect happens after profile update
@@ -67,7 +65,6 @@ class ProfilesAppTests(TestCase):
         updated_profile = UserProfile.objects.get(user=self.user)
         self.assertEqual(updated_profile.default_phone_number, '9876543210')
         self.assertEqual(updated_profile.default_street_address1, '456 Updated St')
-        # Add more assertions to check other updated fields as needed
 
     def test_order_history_view(self):
         # Test order history view
@@ -78,4 +75,4 @@ class ProfilesAppTests(TestCase):
         # Check if order details are displayed
         self.assertContains(response, self.order.order_number)
         self.assertContains(response, 'Test User')  # Check if full name is displayed
-        # Add more assertions to check other order details as needed
+
