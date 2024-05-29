@@ -6,7 +6,7 @@ Introducing Thunder Nutrition an e-commerce platform is the culmination of my jo
 
 [**Link to Thunder Nutrition App Live **](https://thunder-nutrition-6bac86cc4153.herokuapp.com/)
 
-![Alt text](static/media/gif.gif "Hero gif for Readme File")
+![Alt text](media/gif.gif "Hero gif for Readme File")
 
 
 # Contents
