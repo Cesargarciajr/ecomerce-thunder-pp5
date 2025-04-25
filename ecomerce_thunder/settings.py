@@ -25,12 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', '')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'oc5evmlr@x!)lgw4tkok=)3+j!w^9yfs(v4-*(*1z_#2x^0n)7')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu111.gitpod.io', '8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu114.gitpod.io', 'thunder-nutrition-6bac86cc4153.herokuapp.com', ]
+ALLOWED_HOSTS = ['8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu111.gitpod.io', '8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu114.gitpod.io', 'thunder-nutrition-6bac86cc4153.herokuapp.com', '8000-cesargarcia-ecomercethu-2555tmlbbec.ws-eu118.gitpod.io' ]
 
 
 # Application definition
@@ -96,7 +96,8 @@ TEMPLATES = [
 # Django-Allauth backends needed settings
 CSRF_TRUSTED_ORIGINS = ['https://8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu111.gitpod.io',
                         'https://8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu114.gitpod.io',
-                        'https://8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu112.gitpod.io']  # Required by Django 4 update https://docs.djangoproject.com/en/dev/releases/4.0/#format-change
+                        'https://8000-cesargarcia-ecomercethu-ntsr9to7ya9.ws-eu112.gitpod.io',
+                        'https://8000-cesargarcia-ecomercethu-2555tmlbbec.ws-eu118.gitpod.io']  # Required by Django 4 update https://docs.djangoproject.com/en/dev/releases/4.0/#format-change
 
 # Toasts Messages storage
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
